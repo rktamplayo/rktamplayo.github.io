@@ -236,7 +236,7 @@ footer {
 	}
 	
 	#photo{
-		max-width: 250px;
+		max-width: 150px;
 		margin: 0 auto;
 		margin-bottom: 20px;
 	}
@@ -248,40 +248,37 @@ footer {
 	.content ul, .content ol{
 		margin-bottom: 50px;
 	}
+	
+	.content:last-child{
+		margin-bottom: 0;
+	}
+	
+	#header-content{ 
+		margin-top: 0;
+	}
 }
 
 @media print, screen and (max-width: 960px) {
 
-  div.wrapper {
-    width:auto;
-    margin:0;
+  body{
+	padding-left: 20px;
+	padding-right: 20px;
   }
-
-  header, section, footer {
-    float:none;
-    position:static;
-    width:auto;
+  
+  .content{
+	padding: 20px;
   }
-
-  header {
-    padding-right:320px;
+  
+  p:last-child{
+	  margin-bottom: 0;
   }
-
-  section {
-    border:1px solid #e5e5e5;
-    border-width:1px 0;
-    padding:20px 0;
-    margin:0 0 20px;
+  
+  .content ol li{
+	margin-bottom: 15px;
   }
-
-  header a small {
-    display:inline;
-  }
-
-  header ul {
-    position:absolute;
-    right:50px;
-    top:52px;
+  
+  .content ol li:last-child{
+	margin-bottom: 0;
   }
 }
 
