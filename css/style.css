@@ -5,11 +5,12 @@ body {
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#777;
   font-weight:300;
+  color:#000;
 }
 
 .container {
   margin: 0 auto;
-  width: 75%;
+  width: 40%;
   max-width: 1280px;
 }
 
@@ -161,9 +162,9 @@ header ul a strong {
 }
 
 section {
-  width:700px;
-  float:right;
-  padding-bottom:50px;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 1280px;
 }
 
 small {
@@ -265,4 +266,13 @@ footer {
 .social-media-icon {
   width: auto;
   height: 8px;
+}
+
+#photo {
+  float: left;
+  width: 200px;
+}
+
+#main {
+  height: 200px;
 }
