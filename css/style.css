@@ -9,7 +9,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 860px;
+  width: 75%;
+  max-width: 1280px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -160,7 +161,7 @@ header ul a strong {
 }
 
 section {
-  width:500px;
+  width:700px;
   float:right;
   padding-bottom:50px;
 }
