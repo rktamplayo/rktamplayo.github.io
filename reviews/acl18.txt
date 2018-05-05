@@ -1,0 +1,257 @@
+============================================================================ 
+ACL 2018 Reviews for Submission #1456
+============================================================================ 
+
+Title: Hybrid Contextualized Sentiment Classification with Cold-start Aware User and Product Attention
+Authors: Reinald Kim Amplayo, Jihyeok Kim, Sua Sung and Seung-won Hwang
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Appropriateness: Appropriate
+           Adhere to ACL 2018 Guidelines: Yes
+         Adhere to ACL Author Guidelines: Yes
+            Handling of Data / Resources: Yes
+          Handling of Human Participants: N/A
+
+Summary and Contributions
+---------------------------------------------------------------------------
+Summary: The paper introduces a new model for sentiment analysis, called Hybrid Contextualized Sentiment Classification (HCSC). As previous approaches, the model considers information of the user and the product. Both, user and product information are combined with the representation of the review using an attention mechanism. The experimental results show that the approach achieves a better performance than the NSC model introduced by Chen et al. (2016) in scenarios where the data is scarce. 
+
+Contribution 1: A new model (HCSC) achieving better results than the previous NSC model introduced by Chen et al. (2016), in particularly if the training data is scarce.
+---------------------------------------------------------------------------
+
+
+Strengths
+---------------------------------------------------------------------------
+Strength argument 1: The paper focuses on an interesting (and important) problem of data scarcity in sentiment analysis. The authors approach this problem by introducing a new model that attends to user and product information to overcome this problem and show that their approach outperforms the NSC model. 
+
+Strength argument 2:
+
+Strength argument 3:
+
+Strength argument 4:
+
+Strength argument 5:
+---------------------------------------------------------------------------
+
+
+Weaknesses
+---------------------------------------------------------------------------
+Weakness argument 1: Neural networks are non-deterministic: The very same model can achieve significantly different (better or worse) results if trained with different random seeds [1]. Unfortunately, the paper does not report whether the proposed model achieves the same improvement over the baselines if different random seeds are used. So, it remains unclear if the achieved improvement is due to the new architecture or just a matter of the selected random seed. 
+
+[1] Nils Reimers and Iryna Gurevych. 2017. Reporting Score Distributions Makes a Difference: Performance Study of LSTM-networks for Sequence Tagging. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing (EMNLP). pp 338-348. Copenhagen, Denmark.
+
+Weakness argument 2: Lines 464 - 491 describe the parameters used for the proposed models, but it remains unclear how the authors determined these parameters. However, describing the used procedure is essential. In particular, if the improvements by a new model are rather small as in this work. 
+
+Weakness argument 3: The asterisks in Table 2 indicate significant difference of the introduced model to the used baselines. However, it remains unclear which significance test has been used. Also, the interpretation of the results seems to be a bit vague. In particular, the claim in line 545, HCSC "… performs slightly better …" should be rephrased as "HCSC is on par with NCS w.r.t. accuracy" because the sign. test showed that there is no significant difference.
+---------------------------------------------------------------------------
+
+
+Questions to Authors (Optional)
+---------------------------------------------------------------------------
+Question 1: The experiments are conducted on the IMBD and Yelp2013 data set. I was wondering why the authors did not use the Yelp2014 corpus, which has been also used in the paper from Ma et al. mentioned above?
+
+Question 2:
+
+Question 3:
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                NLP Tasks / Applications: N/A
+                    Methods / Algorithms: Moderate contribution
+       Theoretical / Algorithmic Results: N/A
+                       Empirical Results: Moderate contribution
+                        Data / Resources: N/A
+                      Software / Systems: N/A
+            Evaluation Methods / Metrics: N/A
+                     Other Contributions: N/A
+                       Originality (1-5): 3
+             Soundness/Correctness (1-5): 3
+                         Substance (1-5): 3
+                     Replicability (1-5): 4
+             Meaningful Comparison (1-5): 4
+                       Readability (1-5): 4
+                     Overall Score (1-6): 3
+
+Additional Comments (Optional)
+---------------------------------------------------------------------------
+The proposed approach is compared with the NCS model introduced by Chen et al. in 2016. Recently, Ma et al. (2017) published a cascading multiway attention (CMA) model [2], which seems to achieve at least the same results as the HCSC model proposed in the current paper. However, since CMA appeared less than 3 months before the submission deadline of ACL, I will not consider this work in my review but wanted to mention it for the sake of completeness. 
+
+[2] Dehong Ma, Sujian Li, Xiaodong Zhang, Houfeng Wang, Xu Sun. 2017. Cascading Multiway Attention for Document-level Sentiment Classification. Proceedings of the 8th International Joint Conference on Natural Language Processing, pages 634-643, Taipei, Taiwan
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Appropriateness: Appropriate
+           Adhere to ACL 2018 Guidelines: Yes
+         Adhere to ACL Author Guidelines: Yes
+            Handling of Data / Resources: Yes
+          Handling of Human Participants: N/A
+
+Summary and Contributions
+---------------------------------------------------------------------------
+Summary: This paper carefully develops an algorithm (HCSC) to deal with the cold-start problem, which is often overlooked with the abundance of data publicly available for training algorithms. 
+
+Contribution 1: 
+An algorithm that matches the state-of-the-art system on large-scale corpora, and outperform SotA using sparse datasets. 
+
+Contribution 2: 
+A subset of existing data for testing sparsity is released, reducing the original datasets by 20%, 50%, and 80%. 
+
+Contribution 3: 
+Detailed analysis comparing SotA to HCSC with respect to number of users/product data, and computation speed.
+---------------------------------------------------------------------------
+
+
+Strengths
+---------------------------------------------------------------------------
+Strength 1:
+The authors compare their approach to a number of existing algorithms that similarly use user/product texts, and show that even with a large amount of data, their new algorithm outperforms SotA almost every time. The authors then showcase their algorithm and its impact on the cold-start problem by outperforming SotA using sparse datasets by seemingly significant margins (though there are no reported statistical significance values for this comparison in the paper). 
+
+Strength 2:
+The algorithm first combines off-the-shelf CNN (short range) and RNN (long range) information to encode text. While previous work has also benefited from such a combination, the difference is that this approach performs a simple concatenation of the resulting vectors, which increases computation speed compared to other approaches that use both word encodings. Next, the method creates distinct-pooled (information specific to the user) and shared-pooled vectors (a combination of other users). Finally, a frequency-guided selection gate determines if we are in a cold-start situation with limited data, and would therefore put more weight onto the shared vector, or visa versa if we have more distinct user information.
+
+Strength 3: 
+A deep dive into additional aspects of the algorithm describes how the number of user/products changes the performance of the algorithm. The reported algorithm is also faster than SotA by a factor of at least 6. This may be a side effect of addressing the data sparsity issue, but regardless, is also critical when thinking of how these models may some day be implemented, and the speed at which they must perform computation.
+---------------------------------------------------------------------------
+
+
+Weaknesses
+---------------------------------------------------------------------------
+Weakness 1:
+There are a number of works mentioned in the related work that deal with latent topics, aspects, argumentation features, and review clusters for sentiment analysis. However, there is no quantitative comparison to these works-- the paper limits comparison to the list of baselines that only model user and product information. The baseline comparisons are appropriate since the features are all based on the text from the user/product (as is the presented HCSC), however it seems misleading to describe additional work in the space of sentiment analysis in reviews but not directly compare them. How do these other methods that use information in addition to the user and product information perform? How do they compare to your algorithm, which does not have this supplemental information? (If there is no direct comparison you can perform, e.g., the other models are not publicly available or do not use the same Yelp or IMDB datasets, can you briefly describe their performance in their !
+ own domain?)
+
+Weakness 2:
+Another remark about the previous works: the authors say ~ll 199 "These additional contexts were especially useful when data is sparse". It is unclear at this point in the paper, 1) if you actually implement any of them in this work to test this statement, 2) if this statement is an intuition, or 3) if these works look at the issue of data sparsity. After reading the entire paper, it appears that these additional features were not explicitly incorporated into the modeling. The contribution of this paper is on the algorithm for user/product information, not expanding into additional features (though this might be an appropriate line of future work), yet from what you write is seems like these previous works have already addressed the cold-start problem. Can you explain if this is the case and provide more information about these works and their goals?
+---------------------------------------------------------------------------
+
+
+Questions to Authors (Optional)
+---------------------------------------------------------------------------
+Question 1: 
+Why not use RMSE on the sparse datasets if you claim it is a better metric to use? Is this because your previous results on the full dataset already show HCSC performs better for RMSE?
+
+Question 2: 
+Can you speak to why there are major dips in the results in Figure 3? It seems from the IMDB corpus, 20 user/product reviews does better than having 40; however having 100 is even better. On the other hand, the Yelp corpus does better at 40 than it does at 60, then performance increases again at 80. Can you speculate as to the differences in the amounts of data and why they eventually stabilize at about 100? It is also interesting to see that the general trend is followed by both NSC and HCSC, so perhaps this has something to do with the instances selected for this test.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                NLP Tasks / Applications: N/A
+                    Methods / Algorithms: Strong contribution
+       Theoretical / Algorithmic Results: Strong contribution
+                       Empirical Results: N/A
+                        Data / Resources: Strong contribution
+                      Software / Systems: Moderate contribution
+            Evaluation Methods / Metrics: Strong contribution
+                     Other Contributions: N/A
+                       Originality (1-5): 4
+             Soundness/Correctness (1-5): 5
+                         Substance (1-5): 4
+                     Replicability (1-5): 5
+             Meaningful Comparison (1-5): 3
+                       Readability (1-5): 5
+                     Overall Score (1-6): 4
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Appropriateness: Appropriate
+           Adhere to ACL 2018 Guidelines: Yes
+         Adhere to ACL Author Guidelines: Yes
+            Handling of Data / Resources: Yes
+          Handling of Human Participants: N/A
+
+Summary and Contributions
+---------------------------------------------------------------------------
+Summary:
+
+The paper presents an approach to sentiment classification of products and users where the number of reviews is limited (called "cold-start products/users"). It is a complex system at the core of which there is an attention mechanism in which products and users are represented as vectors, in such a way cold-start users/products can be denoted by a vector representing sets of similar users/products. Empirical results show that the system performance outperforms a number of existing baselines.
+
+Contribution 1:
+
+Addressing the cold/start problem and using it to improve sentiment analysis.
+
+Contribution 2:
+
+Attention mechanism and representation of users and products by shared vectors.
+
+Contribution 3:
+
+Empirical results
+---------------------------------------------------------------------------
+
+
+Strengths
+---------------------------------------------------------------------------
+Strength argument 1:
+
+Intuition to use cold-start problem as a way to improve sentiment analysis
+
+Strength argument 2:
+
+Intuition to solve the cold-start problem through the use of shared vectors
+
+Strength argument 3:
+
+Use of attention mechanism encoding the cold-start problem
+---------------------------------------------------------------------------
+
+
+Weaknesses
+---------------------------------------------------------------------------
+I had some difficulty to fully understand part of the technical details, perhaps because it is not part of my background. However, the readability of the main conceptual points could perhaps be slightly improved in the introduction section.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                NLP Tasks / Applications: Moderate contribution
+                    Methods / Algorithms: Moderate contribution
+       Theoretical / Algorithmic Results: N/A
+                       Empirical Results: Moderate contribution
+                        Data / Resources: Marginal contribution
+                      Software / Systems: Moderate contribution
+            Evaluation Methods / Metrics: N/A
+                     Other Contributions: N/A
+                       Originality (1-5): 3
+             Soundness/Correctness (1-5): 4
+                         Substance (1-5): 4
+                     Replicability (1-5): 5
+             Meaningful Comparison (1-5): 5
+                       Readability (1-5): 3
+                     Overall Score (1-6): 5
+
+Additional Comments (Optional)
+---------------------------------------------------------------------------
+- The term "cold-start" might not be familiar to some readers. I suggest to provide a definition of "cold-start problem" and the distinction between "cold-start product" and "cold-start user" in the context of e-commerce and recommendation systems.  
+
+- Figure 1: "Intuition" -> "Conceptual schema"; "Same idea" -> "The same idea"  
+
+- 114: "we propose an idea" -> "we propose the idea"  
+
+- 115: "in Figure 1, and can be described" -> "in Figure 1. It can be described"
+---------------------------------------------------------------------------

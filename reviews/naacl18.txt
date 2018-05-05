@@ -1,0 +1,268 @@
+============================================================================ 
+NAACL HLT 2018 Reviews for Submission #622
+============================================================================ 
+
+Title: Entity2Topic: Selective Entity Semantic Representation for Neural Abstractive Summarization
+Authors: Reinald Kim Amplayo, Seonjae Lim and Seung-won Hwang
+
+============================================================================
+                            META-REVIEW
+============================================================================ 
+
+Comments: + Entity encoding and modeling is added into neural summarization model. 
++ Improved performance is achieved on automatic evaluation. 
+
+- Writing needs improvement.
+============================================================================
+                            REVIEWER #1
+============================================================================
+                   Appropriateness (1-3): 3
+Impact of NLP Tasks / Applications (1-4): 3
+
+Description of Method
+---------------------------------------------------------------------------
+Description of the method: Encode linked entities to guide the neural network to decode the summary.
+
+Strengths: Intuitively, a sumary contains linked entities from the original text.
+
+Weaknesses: There are too many irrelevant entities.
+---------------------------------------------------------------------------
+
+                 Impact of Methods (1-4): 3
+Impact of Theoretical / Algorithmic Results (1-4): 2
+
+Empirical Results: Hypotheses
+---------------------------------------------------------------------------
+Hypotheses? Linked entities with encoder decoder model can help to improve neural abstractive summarization
+
+Novelty of the hypotheses? 
+
+Substance of the hypotheses?
+---------------------------------------------------------------------------
+
+
+Empirical Results: Method
+---------------------------------------------------------------------------
+What is the method for testing the hypothesis/es? Use test set to compute the Rouge score
+
+Strengths of the method and results? The proposed model improves a lot compared with baseline models.
+
+Weaknesses of the method and results? Need to extract the linked entities as a preprocessing step. Also, need more hyperparameters to tune the model, such as tuning K for the pooling
+---------------------------------------------------------------------------
+
+       Impact of Empirical Results (1-4): 3
+        Impact of Data / Resources (1-4): 1
+
+Description of Software / Systems
+---------------------------------------------------------------------------
+Description of the software / system: The system is implemented using Tensorflow.
+
+Strengths: 
+
+Weaknesses:
+---------------------------------------------------------------------------
+
+       Impact of Software / System (1-4): 3
+
+Description of Evaluation Methods / Metrics
+---------------------------------------------------------------------------
+Description of evaluation method / metric: Rouge
+
+Strengths: Standard evaluate measure for summarization
+
+Weaknesses:
+---------------------------------------------------------------------------
+
+Impact of Evaluation Method / Metric (1-4): 1
+      Impact of Other Contribution (1-4): 1
+
+Contributions Summary
+---------------------------------------------------------------------------
+Contribution 1: Use entitites to guide the neural summarizer decoder
+
+Contribution 2: Proposed a RNN and a CNN model for entity encoding
+
+Contribution 3: Use firm attention for pooling
+---------------------------------------------------------------------------
+
+                       Originality (1-5): 3
+             Soundness/Correctness (1-5): 4
+                         Substance (1-5): 4
+                     Replicability (1-5): 4
+            Handling of Data / Resources: Yes
+          Handling of Human Participants: N/A
+             Meaningful Comparison (1-5): 5
+            Related Work: ACL Guidelines: Yes
+                       Readability (1-5): 4
+                        NAACL Guidelines: Yes
+                          ACL Guidelines: Yes
+                     Overall Score (1-6): 4
+               Reviewer Confidence (1-5): 4
+                     Presentation Format: Poster
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+                   Appropriateness (1-3): 3
+Impact of NLP Tasks / Applications (1-4): 1
+                 Impact of Methods (1-4): 1
+Impact of Theoretical / Algorithmic Results (1-4): 1
+
+Empirical Results: Hypotheses
+---------------------------------------------------------------------------
+Hypotheses?
+
+The use of entities linked to a knowledge base in order to drive the decoder of a neural abstractive summarizer.
+
+Novelty of the hypotheses?
+
+Linked entities have not been used before in a NN-based summarizer, so that part is novel. Also the full combination of entity disambiguation using a gate function and firm attention although partly already existing makes an interesting novel contribution.
+Substance of the hypotheses?
+I think the hypothesis is a valid one, *so long as* the assumptions under section 2.1 Observations, hold. I don't have trouble with the 2nd and 3rd claim, but I have to object to the 1st claim in connection to the particular dataset used, i.e., Gigaword. The 1st claim points out that 'summaries are mainly composed of linked entities extracted from the original text'. While I totally agree that this makes sense, the authors go on to justify this empirically and find that 77.1% NPs in the summaries of the Gigaword corpus contain one linked entity. In fact, this is most likely an artifact of the design of the corpus. According to Rush et al., 2015, (title, 1st sentence) pairs were extracted in a way so that there is a word overlap between the two; out of an average of 8.3 words per summary, 4.6 word types (more than half unigrams!) overlap with the 1st sentence of the article. It, therefore, doesn't come as a surprise that linked entities appear to co-occur as well.
+---------------------------------------------------------------------------
+
+
+Empirical Results: Method
+---------------------------------------------------------------------------
+What is the method for testing the hypothesis/es?
+The authors present an interesting attention mechanism to leverage the power of linked entities that appear in documents to be summarized, that makes use of a disambiguation gate, firm attention and pre-trained wiki2vec embeddings. 
+
+Strengths of the method and results?
+I really liked the architecture and the advertised portability of it is a truthful extra plus. Out of curiosity, I wanted to point out whether the authors have considered using the Gumbel-softmax in place of the firm attention as an alternative peaky but yet differentiable softmax over candidate topics.
+Regarding the evaluation methodology, it seems sound and rigorous enough to me, with a healthy number of ablations and comparisons.
+Result-wise while the performance on Gigaword is not stellar across the board, the improvement on (the much harder) CNN dataset seems impressive. 
+
+Weaknesses of the method and results?
+Regarding the qualitative analysis in Table 4 and the last paragraph of section 6, I would have to argue that firm attention and the overall output of the proposed system on CNN is not that great, contrary to the authors' claim. Some more useful insight and error analysis would be appreciated. Also, it would be interesting to see another ablation on K for the topics used with firm attention; the numbers 5 and 10 seem a little bit ad hoc, and perhaps CNN might have benefited from even more topics?
+---------------------------------------------------------------------------
+
+       Impact of Empirical Results (1-4): 4
+        Impact of Data / Resources (1-4): 1
+
+Description of Software / Systems
+---------------------------------------------------------------------------
+Description of the software / system:
+Authors included the tensorflow code of their model as supplementary material.
+Strengths:
+Full reproducibility of results should be possible.
+Weaknesses:
+---------------------------------------------------------------------------
+
+       Impact of Software / System (1-4): 3
+Impact of Evaluation Method / Metric (1-4): 1
+      Impact of Other Contribution (1-4): 1
+
+Contributions Summary
+---------------------------------------------------------------------------
+Contribution 1:
+The use of linked entities to a knowledge base for neural abstractive summarization.
+Contribution 2:
+
+Contribution 3:
+---------------------------------------------------------------------------
+
+                       Originality (1-5): 4
+             Soundness/Correctness (1-5): 4
+                         Substance (1-5): 4
+                     Replicability (1-5): 5
+            Handling of Data / Resources: Yes
+          Handling of Human Participants: N/A
+             Meaningful Comparison (1-5): 5
+            Related Work: ACL Guidelines: Yes
+                       Readability (1-5): 4
+                        NAACL Guidelines: Yes
+
+Discussion of Readability, Style and Format
+---------------------------------------------------------------------------
+Comments on structure:
+
+Comments on clarity and writing:
+Some consistent grammar errors throughout the manuscript; camera ready could benefit from some proof-reading.
+Comments on the use of the NAACL style and format guidelines:
+---------------------------------------------------------------------------
+
+                          ACL Guidelines: No
+                     Overall Score (1-6): 4
+               Reviewer Confidence (1-5): 4
+                     Presentation Format: Poster
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+                   Appropriateness (1-3): 3
+Impact of NLP Tasks / Applications (1-4): 1
+                 Impact of Methods (1-4): 3
+Impact of Theoretical / Algorithmic Results (1-4): 1
+
+Empirical Results: Method
+---------------------------------------------------------------------------
+What is the method for testing the hypothesis/es?
+
+Strengths of the method and results?
+
+Weaknesses of the method and results?
+The experimental design of tuning k is not clear. What are the candidate values for k? 
+How were the other parameters tuned?
+ROUGE alone would not be sufficient for reliable evaluation. Human-evaluation should be added to it.
+---------------------------------------------------------------------------
+
+       Impact of Empirical Results (1-4): 3
+        Impact of Data / Resources (1-4): 1
+       Impact of Software / System (1-4): 3
+Impact of Evaluation Method / Metric (1-4): 3
+      Impact of Other Contribution (1-4): 1
+                       Originality (1-5): 4
+             Soundness/Correctness (1-5): 3
+                         Substance (1-5): 4
+                     Replicability (1-5): 4
+            Handling of Data / Resources: Yes
+          Handling of Human Participants: N/A
+             Meaningful Comparison (1-5): 4
+            Related Work: ACL Guidelines: Yes
+                       Readability (1-5): 3
+                        NAACL Guidelines: Yes
+
+Discussion of Readability, Style and Format
+---------------------------------------------------------------------------
+Comments on structure:
+
+Comments on clarity and writing:
+The paper is mostly well-written, but the correspondence between figures and math formula is not clear. 
+The paper would become more easy-to-read if the figure specifies which part (of the figure) corresponds to which math formula. 
+
+The description about firm attention in Section 3.3 is hard to follow. 
+K is not clearly defined in the text body; we need to see the math formula below to understand what it means.
+Also, I'm not sure if the use of sparse() is a good way to describe what was done in this part of the work. 
+
+Comments on the use of the NAACL style and format guidelines:
+---------------------------------------------------------------------------
+
+                          ACL Guidelines: Yes
+                     Overall Score (1-6): 4
+               Reviewer Confidence (1-5): 4
+                     Presentation Format: Oral
+
+Questions for Authors
+---------------------------------------------------------------------------
+The experimental design of tuning k is not clear. What are the candidate values for k? 
+Readers would be interested in how stable the model is against the value of k. 
+How were the other parameters tuned?
+ROUGE alone would not be sufficient for reliable evaluation. Human-evaluation should be added to it.
+
+The paper is mostly well-written, but the correspondence between figures and math formula is not clear. 
+The paper would become more easy-to-read if the figure specifies which part (of the figure) corresponds to which math formula. 
+
+The description about firm attention in Section 3.3 is hard to follow. 
+K is not clearly defined in the text body; we need to see the math formula below to understand what it means.
+Also, I'm not sure if the use of sparse() is a good way to describe what was done in this part of the work. 
+
+minor comments:
+
+- "ROUGE" would be better than "Rouge"?
+
+- The grammar check should be conducted, especially to the paragraph beginning with "The question on which..."
+
+- typo: "These values are calculate"
+---------------------------------------------------------------------------

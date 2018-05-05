@@ -1,0 +1,269 @@
+===========================================================================
+
+        --========  Review Reports  ========--
+
+The review report from reviewer #1:
+
+*1: Is the paper relevant to ICDM?
+  [_] No
+  [X] Yes
+  
+*2: How innovative is the paper?
+  [_] 6 (Very innovative)
+  [X] 3 (Innovative)
+  [_] -2 (Marginally)
+  [_] -4 (Not very much)
+  [_] -6 (Not at all)
+  
+*3: How would you rate the technical quality of the paper?
+  [_] 6 (Very high)
+  [X] 3 (High)
+  [_] -2 (Marginal)
+  [_] -4 (Low)
+  [_] -6 (Very low)
+  
+*4: How is the presentation?
+  [_] 6 (Excellent)
+  [X] 3 (Good)
+  [_] -2 (Marginal)
+  [_] -4 (Below average)
+  [_] -6 (Poor)
+  
+*5: Is the paper of interest to ICDM users and practitioners?
+  [X] 3 (Yes)
+  [_] 2 (May be)
+  [_] 1 (No)
+  [_] 0 (Not applicable)
+  
+*6: What is your confidence in your review of this paper?
+  [_] 2 (High)
+  [X] 1 (Medium)
+  [_] 0 (Low)
+  
+*7: Overall recommendation
+  [_] 6: must accept (in top 25% of ICDM accepted papers)
+  [X] 3: should accept (in top 80% of ICDM accepted papers)
+  [_] -2: marginal (in bottom 20% of ICDM accepted papers)
+  [_] -4: should reject (below acceptance bar)
+  [_] -6: must reject (unacceptable: too weak, incomplete, or wrong)
+  
+*8: Summary of the paper's main contribution and impact
+  The authors present an aspect sentiment model for aspect-based sentiment analysis. It is constructed for general short texts without the depending on metadata information. The model is based on two observations: sentiment-aspect word pairs are building blocks of information, and short reviews can be clustered. In the experiment part, several tasks were implemented, which show the flexibility of the proposed model. By comparing with related work, it also displays desirable performance.
+
+*9: Justification of your recommendation
+  The two observations are reasonable. The co-occurrences of aspect and sentiment pairs imply a higher coherence between them. AndtThis information can be captured by LDA-based model. The generative process of MicroASM gives potential applications in related areas.
+
+*10: Three strong points of this paper (please number each point)
+  1.    The two observations are the foundation of MicroASM.
+2.      The authors claimed that this model is the first attempt to construct an aspect sentiment model for general short texts.
+3.      In the experiments, the result shows desirable performance by comparing with related work.
+
+*11: Three weak points of this paper (please number each point)
+  1.    Many evaluations are subjective, which are implemented based on human judgments. Can the authors give some objective evaluations about the performance?
+2.      Various tasks were implemented to show the flexibility of the proposed model. However, it also makes the discussion divergent. I think that a conference paper is suitable to focus on one or two questions.
+3.      I think that the second observation (short reviews can be clustered into larger reviews) is too common to mention.
+
+*12: Is this submission among the best 10% of submissions that you reviewed for ICDM'17?
+  [X] No
+  [_] Yes
+  
+*13: Would you be able to replicate the results based on the information given in the paper?
+  [X] No
+  [_] Yes
+  
+*14: Are the data and implementations publicly available for possible replication?
+  [_] No
+  [X] Yes
+  
+*15: If the paper is accepted, which format would you suggest?
+  [X] Regular Paper
+  [_] Short Paper
+  
+*16: Detailed comments for the authors
+  1.    As discussed in the introduction and related work sections, discovering aspect-sentiment pairs from short texts is a typical task in this field. I think that it may be better if the experiments can give more details or quantitative (objective) evaluation about this task.
+2.      The result shows desirable performance compared to the related work. But I am a little odd, because this model is the first model attempting to discover aspect-sentiment pairs in general short texts. How to prove that the comparison is unprejudiced?
+3.      The sentence “modeling sentiment-aspect pairs results to a higher coherence”. Why it results to a higher coherence?
+4.      Some typing errors should be improved: e.g., “This is an atypical method to summarize multiple reviews,” “Instead of modeling words one word at a time,”?
+
+
+========================================================
+The review report from reviewer #2:
+
+*1: Is the paper relevant to ICDM?
+  [_] No
+  [X] Yes
+  
+*2: How innovative is the paper?
+  [_] 6 (Very innovative)
+  [X] 3 (Innovative)
+  [_] -2 (Marginally)
+  [_] -4 (Not very much)
+  [_] -6 (Not at all)
+  
+*3: How would you rate the technical quality of the paper?
+  [_] 6 (Very high)
+  [X] 3 (High)
+  [_] -2 (Marginal)
+  [_] -4 (Low)
+  [_] -6 (Very low)
+  
+*4: How is the presentation?
+  [_] 6 (Excellent)
+  [X] 3 (Good)
+  [_] -2 (Marginal)
+  [_] -4 (Below average)
+  [_] -6 (Poor)
+  
+*5: Is the paper of interest to ICDM users and practitioners?
+  [X] 3 (Yes)
+  [_] 2 (May be)
+  [_] 1 (No)
+  [_] 0 (Not applicable)
+  
+*6: What is your confidence in your review of this paper?
+  [_] 2 (High)
+  [X] 1 (Medium)
+  [_] 0 (Low)
+  
+*7: Overall recommendation
+  [_] 6: must accept (in top 25% of ICDM accepted papers)
+  [X] 3: should accept (in top 80% of ICDM accepted papers)
+  [_] -2: marginal (in bottom 20% of ICDM accepted papers)
+  [_] -4: should reject (below acceptance bar)
+  [_] -6: must reject (unacceptable: too weak, incomplete, or wrong)
+  
+*8: Summary of the paper's main contribution and impact
+  The authors propose a model called Micro Aspect Sentiment Model (MicroASM) based on the observation that sentiment-aspect word pairs
+are the building blocks of information in short reviews and that
+reviews can be grouped into larger reviews.
+
+*9: Justification of your recommendation
+  The paper proposed a new model for aspect- sentiment analysis on short
+reviews. The paper describes the proposed model and presents the techniques it uses. Also the experimental study shows that the proposed model outperfoms the current state-of-the art.
+
+*10: Three strong points of this paper (please number each point)
+  - The author(s) propose(s) ways to make the model more efficient in non-English languages.
+- Preprocessing is quite detailed, explained about the sentiment lexicons for both English and Korean and about the negations.
+- The paper is also quite detailed and clear about the baselines models and it seems like a fair comparison.
+
+*11: Three weak points of this paper (please number each point)
+  -minor syntactic mishaps/ typos
+
+*12: Is this submission among the best 10% of submissions that you reviewed for ICDM'17?
+  [X] No
+  [_] Yes
+  
+*13: Would you be able to replicate the results based on the information given in the paper?
+  [X] No
+  [_] Yes
+  
+*14: Are the data and implementations publicly available for possible replication?
+  [X] No
+  [_] Yes
+  
+*15: If the paper is accepted, which format would you suggest?
+  [X] Regular Paper
+  [_] Short Paper
+  
+*16: Detailed comments for the authors
+  The proposed model utilizes LDA - based approaches and seems, from the experiments, to out-perform current state of the art, having the comparison done in aspect-level tasks and document-level tasks. Additionally, the paper demonstrates effective methods for review summarization, adjective-noun pair-based, and preference-based review clustering. The aforementioned model tries to deal with the limitation of current models regarding short reviews topic and sentiment.
+The paper is generally well-written. We note some minor syntactic mishaps/ typos: 
+“Note that we do not use **these** information during the training of the model.” p.4
+“The measure is given as **follow**:” p.5
+
+
+========================================================
+The review report from reviewer #3:
+
+*1: Is the paper relevant to ICDM?
+  [_] No
+  [X] Yes
+  
+*2: How innovative is the paper?
+  [_] 6 (Very innovative)
+  [_] 3 (Innovative)
+  [X] -2 (Marginally)
+  [_] -4 (Not very much)
+  [_] -6 (Not at all)
+  
+*3: How would you rate the technical quality of the paper?
+  [_] 6 (Very high)
+  [X] 3 (High)
+  [_] -2 (Marginal)
+  [_] -4 (Low)
+  [_] -6 (Very low)
+  
+*4: How is the presentation?
+  [_] 6 (Excellent)
+  [X] 3 (Good)
+  [_] -2 (Marginal)
+  [_] -4 (Below average)
+  [_] -6 (Poor)
+  
+*5: Is the paper of interest to ICDM users and practitioners?
+  [_] 3 (Yes)
+  [X] 2 (May be)
+  [_] 1 (No)
+  [_] 0 (Not applicable)
+  
+*6: What is your confidence in your review of this paper?
+  [_] 2 (High)
+  [X] 1 (Medium)
+  [_] 0 (Low)
+  
+*7: Overall recommendation
+  [_] 6: must accept (in top 25% of ICDM accepted papers)
+  [_] 3: should accept (in top 80% of ICDM accepted papers)
+  [X] -2: marginal (in bottom 20% of ICDM accepted papers)
+  [_] -4: should reject (below acceptance bar)
+  [_] -6: must reject (unacceptable: too weak, incomplete, or wrong)
+  
+*8: Summary of the paper's main contribution and impact
+  This paper tackle the problem of aspect-based sentiment analysis. The authors proposed a Micro Aspect Sentiment Model (MicroASM) designed to short reviews sentiment analysis, based on the assumption that sentiment-aspect word pairs are an important piece of information in short reviews and that related reviews can be semantically grouped into one cluster.
+
+*9: Justification of your recommendation
+  The proposed approach is novel and shows strong performance against different state-of-the-art methods. 
+One of the main advantages of this method, is the unsupervised setting in which it could be applied.
+
+*10: Three strong points of this paper (please number each point)
+  1- New method for aspect-based sentiment analysis
+2- Good discussion of related work
+
+*11: Three weak points of this paper (please number each point)
+  1- The size of the datasets
+
+*12: Is this submission among the best 10% of submissions that you reviewed for ICDM'17?
+  [X] No
+  [_] Yes
+  
+*13: Would you be able to replicate the results based on the information given in the paper?
+  [X] No
+  [_] Yes
+  
+*14: Are the data and implementations publicly available for possible replication?
+  [_] No
+  [X] Yes
+  
+*15: If the paper is accepted, which format would you suggest?
+  [_] Regular Paper
+  [X] Short Paper
+  
+*16: Detailed comments for the authors
+  Despite the strong performance of the approach against different state-fo-the-art methods as well as the unsupervised setting in which it could be applied, there is one main concern that could be a weakness to generalize its results. 
+The main requirement to apply this approach, is a sentiment lexicon for training. Although this point was not a problem in this paper, I think that results may be dependent on the application setting. Here, the authors made use of an existing lexicon (Paradigm+), however, in many other sentiment analysis tasks; this could be difficult and more challenging, as we may not have publicly available lexicons. The authors should discuss this point and its possible impact on the performance. 
+
+Concerning the evaluation, the model is experimented using two different datasets (Yelp and Naver). However, it is not clear why the authors filtered out reviews that have more than "exactly" 140 characters. I understand that the approach is designed to tackle opinion mining of short reviews, but what is the rationale behind this number? 
+It would be interesting if the authors could motivate the use of particular categories rather than choosing the whole set of categories. 
+
+I really appreciate that the authors will make their data publicly available to make the results easy to replicate. 
+
+-----
+Minor comments: 
+-----
+- page 2: in terms on accuracy -> of 
+- page 3: because of their similar positive sentiment -> sentiments 
+- page 3: but all kinds of word pairs -> but also 
+- Table II: of the datasets used -> used datasets
+
+
+========================================================

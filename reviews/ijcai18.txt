@@ -1,0 +1,153 @@
+============================= Meta Review Comments ======================================
+
+    * Meta Review:
+
+The idea of using and selecting translated sentences as domain-free context for sentence classification is innovative and instructive for data expansion and multi-view representation techniques. Most of the concerns were addressed by the rebuttal. We hope the authors can include the supplementary experiments in the revised paper. Moreover, since the proposed model seems not CNN specific, we would still like to see the performance on pure RNN model (not RNN-CNN hybrids).
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+   ============================= Reviewer Comments  =========================
+
+ * Originality: 7
+
+ * Technical Quality: 7
+
+ * Significance: 7
+
+ * Relevance: 9
+
+ * Quality of writing: 5
+
+ * Scholarship: 8
+
+ * Overall Score: 6
+
+ * Confidence: 9
+
+ * Comments:
+Data expansion by incorporating translation texts has long been motivated to enhance the performance in many NLP tasks. This paper proposed a method based on the structure of CNN, to leverage the translations of different languages, to improve the classification performance in sentence classification. A joint representation of different languages was used to model the sentence. The proposed MCFA mechanism can shift the sentence representation and make the distribution more separable. From this point of view, the work is innovative and may be instructive for subsequent data expansion and multi-view representation techniques.
+
+The authors mentioned that “RNN models were shown to be less effective in sentence classification”. This is actually not the case. It would be interesting if the authors can add the results in RNN (such as Bi-LSTM) that was more widely used in sentence classification.
+
+It would also be interesting to see the performance change when N increases gradually.
+
+The ensemble method in Table 2 was not clearly explained.
+
+
+
+  
+
+  
+   ============================= Reviewer Comments  =========================
+
+ * Originality: 7
+
+ * Technical Quality: 7
+
+ * Significance: 7
+
+ * Relevance: 9
+
+ * Quality of writing: 7
+
+ * Scholarship: 6
+
+ * Overall Score: 6
+
+ * Confidence: 8
+
+ * Comments:
+This ?paper proposed a sentence classification model with the domain-free information from different translation results. The idea of this is quite interesting to me. Especially the ?visualization of TREC dataset, this is a very good motivation for this paper.
+
+The only thing bothers me when I was reading this paper is the term "fix", "unfixed","fixing" and "fixed". These terms are quite confusing in the different contexts. ?I suggest using a better term to replace "fix".
+
+In your experiments, you should also include some visualizations about different attention for the different languages. Did you also try to use a small set of languages? What is the performance when you only use around four languages? 
+
+
+  
+
+  
+   ============================= Reviewer Comments  =========================
+
+ * Originality: 7
+
+ * Technical Quality: 6
+
+ * Significance: 6
+
+ * Relevance: 9
+
+ * Quality of writing: 8
+
+ * Scholarship: 8
+
+ * Overall Score: 6
+
+ * Confidence: 8
+
+ * Comments:
+In this paper, the authors proposed to use translated sentences as domain-free context to improve the performance of sentence classification. In order to handle possible inaccurate translations, the authors proposed a neural attention based multiple context fixing attachment method (named MCFA) to fix the noise in sentence representation vectors using the other sentence representation vectors as context. The authors conducted experiments on four datasets and the experimental results show that the proposed method can achieve state-of-the-art or competitive results. 
+
+Strengths of this paper:
+
+1. The idea of using translated sentences as domain-free context for sentence classification is relatively novel in this field.
+
+2. This paper is well written and is easy to read and understand.
+
+3. The experiments are solid. Multiple case studies and visualization figures are illustrated which can help readers to better understand the result of the proposed method.
+
+
+Weaknesses of this paper:
+
+1. The core idea of the proposed MCFA method is to shrink the values of a sentence representation vector generate by CNN using the context vectors (i.e., the sentence representation vector of this sentence in other languages). I wonder whether it is the optimal way to fix the errors brought by inaccurate translations. Maybe using the context vectors to generate a residual vector to fix the sentence representation is a potentially better way.
+
+2. The authors did not explain how they selected the values of hyper-parameters, such as the window size and dropout rate.
+
+3. Several related works on sentence classification are missing. For example, "Context-aware Learning for Sentence-level Sentiment Analysis with Posterior Regularization" (Yang and Cardie, ACL 2014).
+
+4. There are several minor flaws in paper writing. For example, the vectors in Eq. (1) and Eq. (3) should be in bold. "Customer reviews where The task is to classify" (page 4) --> "Customer reviews where the task is to classify".
+
+
+
+
+  
+
+  
+   ============================= Reviewer Comments  =========================
+
+ * Originality: 5
+
+ * Technical Quality: 4
+
+ * Significance: 4
+
+ * Relevance: 7
+
+ * Quality of writing: 6
+
+ * Scholarship: 6
+
+ * Overall Score: 6
+
+ * Confidence: 6
+
+ * Comments:
+This paper adresses the task of sentence classification using additional context based on original sentence translations. The proposed model uses CNN with attention on multiple contexts attachment. 
+The evaluation is performed on a binary classification using four English datasets and the proposed approach achieves state of art performance and sometimes outperforms the best models.
+Using translations to improve monolingual models is not novel, however it is interesting to apply this idea on CNN architectures for sentence classification. The results are promissing but there is no clear evidence about the real effectiveness of sentence tranlations while neither  deep study on the impact of the multiple CNN parameters nor the impact of each language is performed. Using N=1 and N=10 only, makes it difficult to highlight which languages are more appropriate.
+
+Some parts need clarification. For instance, how the authors deal with long sentences? Is there any specific pre-processing for sentences? The authors mentioned the polyglote library without more details about what kind of pre-processing. Tokenization only? POS-TAGS? Any stopwords filtering?   
+How is learned the self usability matrix? and the mapping matrix?   more details are needed also for CNN parameters and the reasons for the chosen parameters.
+
+If the results are encouraging, without significance test, it is difficult to confirm the effectiveness  of the ensemble approach regarding the state of the art. 
+The paper would gain more weight  if  the CNN-MCFA approach was evaluated on harder classification tasks and also if showing the impact of each language rather than chosing N=1 or N=10.

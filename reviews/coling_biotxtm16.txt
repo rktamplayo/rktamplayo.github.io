@@ -1,0 +1,43 @@
+Reviewer 1
+ 
+Comments
+The paper discusses the construction of an entity network based on the scientific literature.
+The paper is well written, although some terms should be clearly defined. For instance, it is not clear what the authors exactly mean
+by "traditional based" networks. This concept should be defined in the introduction. Also "prolific authors" should be defined in the
+introduction as finding such authors is one of the goals of the paper.
+My main concern is that the topic of the paper is of lesser relevance for the NLP community and for the community that is involved
+in clinical data processing. The topic rather belongs to the field of data mining. Also the proposed techniques do not seem very
+novel, even from the point of view of data mining.
+Section 3.2.4 the two highest topics => the two topics with highest probabilities
+ 
+Reviewer 2
+ 
+Comments
+This paper aims to discover entity networks, in which entities are either authors or biomedical entities discerned from PubMed
+abstracts. The authors try to generate such networks for Cerebral Autosomal Dominant Arteriopathy with Subcortical Infarcts and
+Leukoencephalopathy, also known as CADASIL. There are several goals, namely: (1) finding prolific authors that publish about this
+rare disease; (2) finding important bioentities in such papers; (3) finding meaningful keywords in the papers; (4) discovering
+influential topics from these papers.
+However, it is not clear which clinical application will use any of these goals. The reader has to guess that perhaps when knowing
+which authors are prolific the health professionals that manage such a rare disease will be able to read publications of such
+authors and get new insights. But this is just a wild guess maybe there are some non-prolific authors that have published a key
+finding about this disease and the physicians will simply waste their time?!?!?
+For the second goal it is not clear how knowing about the important bioentities will impact anything. Even more unclear for any
+application is the need to find keywords after you find them what do you do with them?
+And in finding influential topics we all know that the interpretation of LDA clusters is not easy the authors are mum about it.
+I find the paper a collection of well-known techniques (e.g. PageRanking, LDA) that are combined without any rationale leaving
+the reader quite confused. The English also needs some editing.
+ 
+Reviewer 3
+ 
+The author(s) present a study on generating different types of networks (e.g. author, keyword, biological entities) for scientific article
+data with a focus on 'scarce' data (lack of 'value' and of 'volume'). The proposed method is applied on two case studies (CADASIL
+and Metformin), The manuscript addresses an important research question, but the topic is somewhat outside of the scope of this workshop, as it
+does not present work related to clinical text. A venue focusing more on biomedical NLP and research on extracting information
+from scientific article datasets would perhaps be a better fit. Although the proposed methods could be beneficial for clinical research
+in a larger perspective, there is no discussion about this in the manuscript.
+The proposed methodology of constructing co-occurrence networks using information from the full text as opposed to metadata
+seems promising and there are some interesting ideas presented. However, the experimental and evaluation setup are not very
+clear, and it is not quite clear how the proposed model is better for what is called 'scarce' data compared to previous studies. Some
+clarification and restructuring of these parts would be essential to improve this manuscript, as it is a bit difficult, at least to me, to
+understand how to interpret the presented results.
