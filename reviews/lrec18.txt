@@ -1,0 +1,93 @@
+================ 
+LREC 2018 Reviews for Submission #560
+============================================================================ 
+
+Title: Visual Choice of Plausible Alternatives: An Evaluation of Image-based Commonsense Causal Reasoning
+Authors: Jinyoung Yeo, Gyeongbok Lee, Gengyu Wang, Seungtaek Choi, Hyunsouk Cho, Reinald Kim Amplayo and Seung-won Hwang
+============================================================================
+                            REVIEWER #1
+============================================================================ 
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+The paper introduces a novel task of visual commonsense causal reasoning
+(VCOPA) as a variant of the COPA task (Choice of Plausible Alternatives). The
+task is well motivated and the differences (introduced by visual questions)
+with respect to the text-based task are clearly explained through examples. 
+
+Besides introducing the task, the paper also presents a dataset created by the
+authors (380 questions with >1,000 images). The creation procedure is clearly
+explained (with nice examples about the main difficulties it involves) and
+sound. 
+
+Moreover, besides the simplest “random” baseline, an experiment with a more
+competitive baseline (at least in principle) is presented. Results are poor,
+but they make it clear that the task is not only interesting but also
+challenging. Maybe, more advanced methods could have been tried, but this is
+clearly not the focus of the paper.
+
+A section discussing the main challenges involved in the task concludes the
+paper. I particularly liked it because it sketches possible research paths that
+are worth exploring.
+
+============================================================================
+                            REVIEWER #2
+============================================================================ 
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+This paper introduces a new reasoning task, at the intersection of
+two domains, knowledge reasoning (KR) and computer vision (CV). The
+contribution of this work is threefold: (i) corpus constitution
+methodology, (ii) new task description and analysis, and (iii)
+baseline system description and analysis. All these contributions may
+lead to very interesting researches at the intersection of the KR and
+CV domains. The new task (VCOPA) described in this paper is based on
+the COPA task (Choice of Plausible Alternatives) but adapted to CV and
+image analysis: given a premise (textual premise for COPA, visual
+premise for VCOPA), systems have to choose between two alternatives
+(textual for COPA, visual for VCOPA).
+
+The paper is well structured and the contributions are easy to follow
+and understand.
+
+The corpus design is well described along with the methodological
+questions. The resulting corpus is comparable to the COPA one. While
+the VCOPA task aims at supporting research on causal reasoning on images
+only, the way it is built allows to support other research scenarios
+such as multimodal reasoning by associating textual questions to each
+images.
+
+A analysis of the different categories of causal relations is
+provided. I would like to have a corpus description providing
+statistical information for all these categories (visual
+disambiguation, temporal disambiguation etc.).        Moreover, concerning
+the corpus description, I would like to have more information on the
+distribution of the data between dev and test (how many copa-like
+questions in dev and test? how is the distribution of the different
+causal relation categories between dev and test done, etc.).
+
+Concerning the results provided, I would like to have significance
+measures between the results with automatic or manual captioning and
+between the baseline and a random system.
+
+============================================================================
+                            REVIEWER #3
+============================================================================ 
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+This is a nice, well written paper. The core of the paper is to creation and
+provision of a new multimedia corpus.
+A baseline experiment is presented that demonstrates the usage of the data.
+The authors are self-reflexive enough to understand that that baseline is not
+perfect.
