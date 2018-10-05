@@ -16,14 +16,14 @@ body {
 
 #photo {
 	display: inline-block;
-	max-width: 25%;
+	max-width: 20%;
 	margin-right: 20px;
 	vertical-align: middle;
 }
 
 #main{
 	display: inline-block;
-	max-width: 70%;
+	max-width: 75%;
 	vertical-align: middle;
 }
 
