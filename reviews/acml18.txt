@@ -1,0 +1,75 @@
+Reviewer #1
+
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+With the belief that modeling operand information could significantly increases the performance of TableQA, this paper proposes two datasets that include the operand information aside from the table, query and answer. Moreover, the authors also propose NEURAL OPERATOR (NEOP), a multi-layer sequential network which is able to learn the correct operands and operator simultaneously.
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Above Average
+3. Correctness (Is the paper technically correct?)
+There are minor flaws
+4. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Above Average
+5. Overall Rating
+Accept
+6. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+Strength: 
+1) The most impressive part of this paper is its significant contribution to the community of TableQA task, in terms of novel datasets and novel methodologies as well.
+2) It is a very novel trial to directly modeling the operands and operators. Meanwhile, the significant performance gain demonstrated in the experiment results makes this method even more convencing.
+
+Weakness :
+The biggest downside of this paper is its poor language expression. The authors should carefully polish their words in the next version.
+Some typos are listed as follows:
+1) In p1, ‘want to seeking’ should be ‘want to seek’, ‘two types QA task’ should be ‘two types of QA tasks’.
+2) In p4, ‘results to’ should be ‘results in’. ‘curated form’ should be ‘curated from’. ‘on a public baseball statistics data’ should be ‘on a public baseball statistics dataset’.
+3) In p5, ‘on not only ... but also on’ should be ‘on not only ... but also’.
+4) In p7, ‘select on’ should be ‘select’.
+5) In p10, the sentence ‘we use the operations to the seven operations found in the dataset’ is confusing.
+
+Decision:
+Overall, I weakly vote for the acceptance of this paper.
+7. Reviewer confidence
+Reviewer is knowledgeable
+
+Reviewer #4
+
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+This paper aims to solve the TableQA problem, which is one of the structured question answering task. Firstly, paper proposed two datasets based on the assumption that operands can used as the weak supervision and further improve the Interpretability of the model. Then, a NeOp model is proposed to solve the TableQA problem with operands provided. Finally, the experimental results on proposed two datasets show the significant good performance of NeOp model compare to the baseline models.
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Above Average
+3. Correctness (Is the paper technically correct?)
+Paper is technically correct
+4. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Excellent (substantial, novel contribution)
+5. Overall Rating
+Strong Accept
+6. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+This paper is well written and easy to read, while there are some questions below:
+1)	Binary encoding w_ib, which is the equivalent numerical value, use 15 dimensions for decimal part. The questions are: a) why use binary values? b) why is 15 dimensions not 16 dimensions? c) how many dimensions of the integer part?
+2)	What is the bad cases of NeOp model? In real application, some complex constrains will be used, such as ‘the player participates more than 3 matches’, does this framework still work for this kind of query?
+
+Some minor problems:
+1)	Section 2.1 first line overflow the boundary.
+7. Reviewer confidence
+Reviewer is knowledgeable
+
+Reviewer #8
+
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+This paper propose the usage operand information to improve the performance of TableQA models. To this end, this paper create to two new datasets (MLB, WikiOps) which contains operand information and develop neural operator which can utilize the operand information in systematic way. Numerical experiment results showed that proposed method can achieve higher performance than NEEN and NEOP. In addition it also showed that comparable performance to SEQ2SQL can be achievable although proposed model utilize weak supervision (operand information vs. SQL statement).
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Excellent
+3. Correctness (Is the paper technically correct?)
+Paper is technically correct
+4. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Above Average
+5. Overall Rating
+Strong Accept
+6. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+The paper is well-written and its contribution is enough to accepted for ACML2018. Especially the quality of figures are very good. Thanks to these figure, I can quickly understand the concept and contribution of this paper. 
+
+Minor Comment
+I wonder the setting (supported operations) of NEOP in experiment. Is it same to NEPR? I ask this because the authors said that NEPR can only support three operations (max, min, and count) in section 2.2.
+7. Reviewer confidence
+Reviewer is knowledgeable
