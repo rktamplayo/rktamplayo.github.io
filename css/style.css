@@ -27,8 +27,9 @@ body {
 	vertical-align: middle;
 }
 
-#red{
-  color:red;
+.award{
+  color: red;
+  font-weight: bold
 }
 
 /* END HEADER */
