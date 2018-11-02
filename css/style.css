@@ -27,6 +27,10 @@ body {
 	vertical-align: middle;
 }
 
+#red{
+  color:red;
+}
+
 /* END HEADER */
 
 .content {

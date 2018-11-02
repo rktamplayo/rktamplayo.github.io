@@ -1,0 +1,137 @@
+Reviewer #1
+
+Questions
+1. [Summary] Please summarize the main claims/contributions of the paper in your own words.
+This paper proposed a new latent variable method for word sense induction that improves over previous approaches in that it can model senses dynamically and not statically like previous similar methods. By generating pairings between target and neighbouring words, this static requirement by these methods is alleviated. The method is evaluated in two standard word sense induction datasets and on the author name disambiguation task, showing quantitatively the effectiveness of their assumptions and the particular method.
+2. [Relevance] Is this paper relevant to an AI audience?
+Relevant to researchers in subareas only
+3. [Significance] Are the results significant?
+Moderately significant
+4. [Novelty] Are the problems or approaches novel?
+Novel
+5. [Soundness] Is the paper technically sound?
+Has minor errors
+6. [Evaluation] Are claims well-supported by theoretical analysis or experimental results?
+Sufficient
+7. [Clarity] Is the paper well-organized and clearly written?
+Good
+8. [Detailed Comments] Please elaborate on your assessments and provide constructive feedback.
+I have to say that I was very impressed by a very well written introduction, where it was very clear the motivation and how the limitations of previous works were to be solved. However, the following sections are not as clear, and there are some repetitions and stylistic problems as well (see below in “Minor comments”). In particular, the “Proposed Model” section is not at all clear, and could be better explained. There are some long formulas without much explanation or motivation (also the variables are in some cases explained much after they are first introduced). All in all, it is much easier to get the gist of the algorithm from the introduction, as the details are not so clear.
+
+Then the evaluation is quite complete, with two standard benchmarks and another related task. In general the results showed the superiority of the proposed model, and in the rare case of the V-M measure in the SemEval 2019 dataset, the reasoning of this anomaly was clearly explained. In some cases like the SemEval 2013 dataset the differences are apparent in all configurations. Also the authors included a small ablation test with different variants of the model where the inclusion of the target-neighbour constraint seems clearly relevant. As a suggestion, given the inconclusive results with the parameter “s”, it would have been interesting to include an analysis about it, along the lines of the analysis included in the “sense granularity problem” section.
+
+
+
+Minor comments:
+
+In the Introduction, when talking about the author name disambiguation task, it is stated “it aims to automatically find different authors, instead of words”. I guess this is slightly inaccurate, as the authors are also represented by words? I would rephrase differently.
+
+In general I would refrain from using colors to distinguish features in Figures, like in Figure 2 and Figure 5. In fact I would replace Figure 5 to an standard results table.
+
+In the related work there is a repetition: “In our experiments, we show in our experiments”. Also in the Proposed Model section, where “CabAB represents the number of a…” is repeated in “Inference” and “Word sense induction”
+
+Also in the related work it is said that “we show that neural-based methods are generally ineffective for this task…”. I guess this is a quite strong statement, considering that the evaluation is limited to a couple of methods, but difficult to generalize to *all* neural-based methods.
+
+I found a few places where articles (the, a…) and plural or singular where not properly used (e.g. Page 3: “to represent word sense” -> “to represent word senses”; Page 4: “divide the word lists into two context”->”divide the word lists into two contexts”; "tuned number of sense"-> "tuned number of senses"). I would recommend a proof-reading of the article (although it is generally well-written).
+
+In page 4 (Parameter setting), there seems to be a typo with “T=2S=30”
+9. [QUESTIONS FOR THE AUTHORS] Please provide questions for authors to address during the author feedback period.
+How was the "s" parameter tuned exactly? It is only mentioned that it was tuned on a separate development set: was it provided in the official partition of each dataset?
+10. [OVERALL SCORE]
+7 - Accept
+11. [CONFIDENCE]
+Reviewer is knowledgeable but out of the area
+12. Please acknowledge that you have read the author rebuttal. If your opinion has changed, please summarize the main reasons below.
+I have read the author rebuttal, thank you to the authors for clarifying a few points. I keep my overall impression of the paper, as I think it has some strong points, but also other points need to be further addressed. In particular, as also pointed out by Rev#3, the fact that there are a few parameters which are set somewhat arbitrarily (although one of them has been clarified in the rebuttal) makes the system not as hyperparameter-free as claimed, and add complexity as Rev#3 pointed out. This is also coupled with the difficulty to understand the model as I mentioned in my review. However, the paper is still solid in my opinion (although it can be definitely improved) and I hope most concerns can be further clarified and explained properly in the camera-ready is accepted.
+
+Reviewer #2
+
+Questions
+1. [Summary] Please summarize the main claims/contributions of the paper in your own words.
+This work focus on word sense induction (WSI) task by extending latent variable models. To tackle the over/under-estimate word sense granularity issue, the authors propose a Granularity-Agnostic Sense Model (GAS) by introducing a separate sense variable to model. They further force senses to generate target-neighbor pairs instead of local context words to model fine-grained sense and alleviate the generation of garbage sense. Experiments on SemEval 2010 and 2013 WSI task show that this work performs better on unsupervised evaluation compated to several latent variable based and neural based systems. Experiments on unsupervised author name disambiguation (UAND), a task containing more amount and variance of sense numbers, further show the effectiveness of this model.
+2. [Relevance] Is this paper relevant to an AI audience?
+Relevant to researchers in subareas only
+3. [Significance] Are the results significant?
+Moderately significant
+4. [Novelty] Are the problems or approaches novel?
+Somewhat novel or somewhat incremental
+5. [Soundness] Is the paper technically sound?
+Has minor errors
+6. [Evaluation] Are claims well-supported by theoretical analysis or experimental results?
+Somewhat weak
+7. [Clarity] Is the paper well-organized and clearly written?
+Good
+8. [Detailed Comments] Please elaborate on your assessments and provide constructive feedback.
+The main contribution of this work is two-fold:
+
+1) They introduce a switch variable (sw) to generate global words from both sense and topic to improve the ability of their model. Similar ideas have been proposed and demonstrated in [1] and [2].
+
+2) They do a detailed analysis on word sense granularity issue, and propose to force senses to generate target-neighbor pairs to model fine-grained	senses. This is the highlight of this paper and the main difference compared to [2].
+
+The strengths of this work is below:
+
+1) To our best knowledge, this is the first work to analyze the sense granularity issue of WSI task. 
+
+2) Forcing senses to generate target-neighbor pairs is a novel and interesting.
+
+3) The experiments are all-around as they compare their method to both latent variable based and neural based model. Results are good and can demonstrate the effectiveness of their work on sense granularity issuse as well.
+
+There is a main weakness: Lack of the well definition of fine-grained senses. 
+
+The authors claim that their method can generate fine-grained senses, and use "cold" as example to show what these senses like. However, all the experiments such as two SemEval tasks only show that the granularity of clusters they generate is close to the golden standards but do not concern semantics. Is it possible that granularity of clusters is rational but the actual content is meaningless? Or is the definition of fine-grained senses is just about granularity? We need more clarification.
+
+We also think there is one place can better explained:
+
+In analyzing how this work tackle sense granularity problem (Figure 4), the authors compare their work to STM, HC. But we also want to know that which part, sw or wp, contributes most to this improvements. It is better to provide comparison between	GAS-wp and GAS-sw in the experiment.
+
+There is one typo error: In Table 2, the F-BC value of DIVE is not 29.1 but 49.9.
+9. [QUESTIONS FOR THE AUTHORS] Please provide questions for authors to address during the author feedback period.
+1) Definition of fine-grained senses
+Is it possible to better demonstrate the concept of fine-grained senses? Is it just about the rational granularity of clusters or further related to the content of the clusters? 
+
+2) Supervised evaluation ?
+SemEval 2010 provides supervised evaluation as well, and was listed in [2], [3] and many other works. In [2], as the number of senses are indeed very large, their system achieves improvements on supervised evaluation. We want to know that whether this work can perform as well as, or even better, than theirs with far less induced number of senses. If not, we want to know the relation between unsupervised and supervised evaluation and whether it is related to fine-grained senses.
+
+3) Switch variable distribution shared in a document?
+For the generative process, the probability that whether a global word is generated from sense or topic share in the same document. We assume that words in different position may usually not share the same probability. It will be better if there are more explanation on this.
+10. [OVERALL SCORE]
+7 - Accept
+11. [CONFIDENCE]
+Reviewer is knowledgeable in the area
+12. Please acknowledge that you have read the author rebuttal. If your opinion has changed, please summarize the main reasons below.
+I have read the rebuttal. The author answers all my questions. There is a problem mentioned by the other reviewer, about the performance of current paper v.s. the best model in SemEval 2010, in V-Measure, at least. I think the author should address this problem clearly.
+
+Reviewer #3
+
+Questions
+
+1. [Summary] Please summarize the main claims/contributions of the paper in your own words.
+The authors present a latent variable model akin to previous work in the literature, but more complex in terms of context variables. Whereas other methods simply consider an often small bag-of-words window around the target word, this approach uses the so-called target-neighbor pairs, motivated by the possibility of inferring more complex word relations, such as similarity and dependency ones, apart from the standard word association relation modeled through co-occurrence. The authors hypothesize that could lead to a word sense induction method that is better in deducing the right number of word senses in the document.
+2. [Relevance] Is this paper relevant to an AI audience?
+Of limited interest to an AI audience
+3. [Significance] Are the results significant?
+Moderately significant
+4. [Novelty] Are the problems or approaches novel?
+Somewhat novel or somewhat incremental
+5. [Soundness] Is the paper technically sound?
+Technically sound
+6. [Evaluation] Are claims well-supported by theoretical analysis or experimental results?
+Sufficient
+7. [Clarity] Is the paper well-organized and clearly written?
+Good
+8. [Detailed Comments] Please elaborate on your assessments and provide constructive feedback.
+
+Although the method is introduced as a way of dealing with the sense granularity problem, such that no prior knowledge of the number of senses is required for the model to work, there is an abundance of hyperparameters that are set to arbitrary values (the upper bound of senses included!). The advantage of not needing to tune the hyperparameters is emphasized multiple times in the paper, but I feel that such arbitrary values can hardly generalize to multiple datasets. In some instances, the upper bound of senses is set to match with the sense granularities of the datasets. Additionally, the authors missed recent papers that actually beat their own, i.e., their paper does not breach the state-of-the-art performance on SemEval 2010 [1], so this paper feels like a contribution that is actually not needed as is does not work that well and is fairly complex.
+
+I find that the paper offers too small of a contribution for a quality long submission as required at AAAI-19. I think that the paper would be more suitable for the short format. In short, it's a little twist on representing context paired with a well-known model.
+
+Other:
+* some numbers are pretty close, and therefore you should back up your hypotheses with statistical testing.
+9. [QUESTIONS FOR THE AUTHORS] Please provide questions for authors to address during the author feedback period.
+No questions.
+10. [OVERALL SCORE]
+6 - Marginally above threshold
+11. [CONFIDENCE]
+Reviewer is knowledgeable in the area
+12. Please acknowledge that you have read the author rebuttal. If your opinion has changed, please summarize the main reasons below.
+I thank the authors for providing their response to the issues and questions raised by other reviewers and myself. In light of the authors' responses, I revised my recommendation.
