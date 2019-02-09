@@ -27,7 +27,7 @@ body {
 	vertical-align: middle;
 }
 
-.award{
+.award, .new {
   color: red;
   font-weight: bold
 }
