@@ -1,0 +1,236 @@
+Dear Reinald Kim Amplayo:
+
+As TACL action editor for submission 1619, "Categorical Metadata Representation for Customized Text Classification", I am happy to tell you that I am accepting your paper subject (conditional) to your making specific revisions within two months.
+
+As you can see, the reviews were mixed, and I had gone through a round of email discussions with the reviewers where they provided additional detailed comments. Based on the reviews (attached below) and the additional comments, here is the LIST OF MANDATORY REVISIONS:
+1. One of the main concerns from the negative review was comparisons to state-of-the-art numbers. At the end of the discussion, I agreed with the reviewers who felt that you have compared against reasonable baselines even though comparisons to SOTA were a bit tricky. That said, we all agreed that better *discussions* about SotA on all datasets would be a useful addition to the paper. More specifically: brief description on state-of-the-art of each task of the three datasets; how current state-of-the-art deviate from the baseline method in the paper. (this is related to the suggestion in Review 3 "One thing I would like to see for reference is state of the art results on each of the datasets used in the experiments. Table 3 and 4 are supposed to show this, but it is not clear and could be improved since for example in Table 3 there are just abbreviations of many models without citations.")
+2. Better explanation of what "metadata" is and what should be done in case they are missing.
+
+Generally, your revised version will be handled by the same action editor (me) and the same reviewers (if necessary) in making the final decision --- which, *if* all requested revisions are made, will be final acceptance.
+
+You are allowed one to two extra pages of content to accommodate these revisions. To submit your revised version, follow the instructions in the "Revision and Resubmission Policy for TACL Submissions" section of the Author Guidelines at https://transacl.org/ojs/index.php/tacl/about/submissions#authorGuidelines .
+
+Thank you for submitting to TACL, and I look forward to your revised version!
+
+Bo Pang
+Google
+bopang42@gmail.com
+------------------------------------------------------
+------------------------------------------------------
+....THE REVIEWS....
+------------------------------------------------------
+------------------------------------------------------
+Reviewer A:
+
+CLARITY: For the reasonably well-prepared reader, is it clear what was done and why? Is the paper well-written and well-structured?: 
+3. Mostly understandable to me (a qualified reviewer) with some effort.
+
+
+INNOVATIVENESS: How original is the approach? Does this paper break new ground in topic, methodology, or content? How exciting and innovative is the research it describes?
+
+Note that a paper can score high for innovativeness even if its impact will be limited.
+: 
+3. Respectable: A nice research contribution that represents a notable extension of prior approaches or methodologies.
+
+SOUNDNESS/CORRECTNESS: First, is the technical approach sound and well-chosen? Second, can one trust the claims of the paper -- are they supported by proper experiments and are the results of the experiments correctly interpreted?: 
+2. Troublesome. There are some ideas worth salvaging here, but the work should really have been done or evaluated differently.
+
+
+RELATED WORK: Does the submission make clear where the presented system sits with respect to existing literature? Are the references adequate?
+
+Note that the existing literature includes preprints, but in the case of preprints:
+• Authors should be informed of but not penalized for missing very recent and/or not widely known work.
+• If a refereed version exists, authors should cite it in addition to or instead of the preprint.
+: 
+4. Mostly solid bibliography and comparison, but there are a few additional references that should be included. Discussion of benefits and limitations is acceptable but not enlightening.
+
+
+SUBSTANCE: Does this paper have enough substance (in terms of the amount of work), or would it benefit from more ideas or analysis?
+
+Note that papers or preprints appearing less than three months before a paper is submitted to TACL are considered contemporaneous with the submission. This relieves authors from the obligation to make detailed comparisons that require additional experiments and/or in-depth analysis, although authors should still cite and discuss contemporaneous work to the degree feasible.
+: 
+2. Work in progress. There are enough good ideas, but perhaps not enough results yet.
+
+IMPACT OF IDEAS OR RESULTS: How significant is the work described? If the ideas are novel, will they also be useful or inspirational? If the results are sound, are they also important? Does the paper bring new insights into the nature of the problem?: 
+3. Interesting but not too influential. The work will be cited, but mainly for comparison or as a source of minor contributions.
+
+REPLICABILITY: Will members of the ACL community be able to reproduce or verify the results in this paper?: 
+4. They could mostly reproduce the results, but there may be some
+variation because of sample variance or minor variations in their interpretation of the protocol or method.
+
+IMPACT OF PROMISED SOFTWARE:  If the authors state (in anonymous fashion) that their software will be available, what is the expected impact of the software package?: 
+2. Documentary: The new software will be useful to study or replicate the reported research, although for other purposes it may have limited interest or limited usability. (Still a positive rating)
+
+IMPACT OF PROMISED DATASET(S): If the authors state (in anonymous fashion) that datasets will be released, how valuable will they be to others?: 
+2. Documentary: The new datasets will be useful to study or replicate the reported research, although for other purposes they may have limited interest or limited usability. (Still a positive rating)
+
+
+TACL-WORTHY AS IS? In answering, think over all your scores above. If a paper has some weaknesses, but you really got a lot out of it, feel free to recommend it. If a paper is solid but you could live without it, let us know that you're ambivalent.
+
+Reviewers: after you save this review form, you'll have to make a confidential recommendation to the editors via pull-down menu as to: what degree of revision would be needed to make the submission eventually TACL-worthy?
+: 
+2. Leaning against: I'd rather not see it appear in TACL.
+
+
+Detailed Comments for the Authors
+
+Reviewers, please draft your comments on your own filesystem and then copy the results into the text-entry box.  You will thus have a saved copy in case of system glitches.
+: 
+A neural model for customized text classification is proposed by using basis vectors to produce basis-customized weights. 
+
+While an interesting idea for doing customized text classification, the improvement over prior work or the designed baselines is very small, e.g., on the yelp dataset, the proposed model improves from 66.4% (achieved by Ma et al. (2017)) to 67.1%. For the paper acceptance dataset, the accuracy of a previous hierarchical CNN model outperforms the proposed models (all types of basis customization). However, this is not a correct comparison for two reasons: 1) as the authors of this paper mention, the split of train/dev/test was not the same as in Yang et al (2018) and 2) the train/dev/test sizes in this paper are 33,464; 2,000; and 2,000, while the sizes of these sets in Yang et al. (2018) are 17,218; 1,000; and 1,000, respectively. Thus, a direct comparison is not suitable. The authors of this paper should consider generating results on the same data splits and same datasets. Based on these results, it is hard to judge which method performs better. 
+
+Other questions: 
+
+How much is the author information contributing to the acceptance of a paper? That is, is author more important or research area is more important?
+
+For an example like "the food is very sweet" how much data is it needed to achieve a satisfactory performance while incorporating user bias?
+
+How was the dataset of political messages constructed? That is, how many annotators, inter-agreement, etc.?
+
+The authors should carefully check grammar and misspellings.
+
+REVIEWER CONFIDENCE: 
+4. Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings.
+
+------------------------------------------------------
+
+------------------------------------------------------
+Reviewer B:
+
+CLARITY: For the reasonably well-prepared reader, is it clear what was done and why? Is the paper well-written and well-structured?: 
+3. Mostly understandable to me (a qualified reviewer) with some effort.
+
+
+INNOVATIVENESS: How original is the approach? Does this paper break new ground in topic, methodology, or content? How exciting and innovative is the research it describes?
+
+Note that a paper can score high for innovativeness even if its impact will be limited.
+: 
+3. Respectable: A nice research contribution that represents a notable extension of prior approaches or methodologies.
+
+SOUNDNESS/CORRECTNESS: First, is the technical approach sound and well-chosen? Second, can one trust the claims of the paper -- are they supported by proper experiments and are the results of the experiments correctly interpreted?: 
+3. Fairly reasonable work. The approach is not bad, and at least the main claims are probably correct, but I am not entirely ready to accept them (based on the material in the paper).
+
+
+RELATED WORK: Does the submission make clear where the presented system sits with respect to existing literature? Are the references adequate?
+
+Note that the existing literature includes preprints, but in the case of preprints:
+• Authors should be informed of but not penalized for missing very recent and/or not widely known work.
+• If a refereed version exists, authors should cite it in addition to or instead of the preprint.
+: 
+3. Bibliography and comparison are somewhat helpful, but it could be hard for a reader to determine exactly how this work relates to previous work or what its benefits and limitations are.
+
+
+SUBSTANCE: Does this paper have enough substance (in terms of the amount of work), or would it benefit from more ideas or analysis?
+
+Note that papers or preprints appearing less than three months before a paper is submitted to TACL are considered contemporaneous with the submission. This relieves authors from the obligation to make detailed comparisons that require additional experiments and/or in-depth analysis, although authors should still cite and discuss contemporaneous work to the degree feasible.
+: 
+4. Represents an appropriate amount of work for a publication in this journal. (most submissions)
+
+IMPACT OF IDEAS OR RESULTS: How significant is the work described? If the ideas are novel, will they also be useful or inspirational? If the results are sound, are they also important? Does the paper bring new insights into the nature of the problem?: 
+4. Some of the ideas or results will substantially help other people's ongoing research.
+
+REPLICABILITY: Will members of the ACL community be able to reproduce or verify the results in this paper?: 
+3. They could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined, and/or the training/evaluation data are not widely available.
+
+IMPACT OF PROMISED SOFTWARE:  If the authors state (in anonymous fashion) that their software will be available, what is the expected impact of the software package?: 
+1. No usable software released.
+
+IMPACT OF PROMISED DATASET(S): If the authors state (in anonymous fashion) that datasets will be released, how valuable will they be to others?: 
+1. No usable datasets submitted.
+
+
+TACL-WORTHY AS IS? In answering, think over all your scores above. If a paper has some weaknesses, but you really got a lot out of it, feel free to recommend it. If a paper is solid but you could live without it, let us know that you're ambivalent.
+
+Reviewers: after you save this review form, you'll have to make a confidential recommendation to the editors via pull-down menu as to: what degree of revision would be needed to make the submission eventually TACL-worthy?
+: 
+4. Worthy: A good paper that is worthy of being published in TACL.
+
+
+Detailed Comments for the Authors
+
+Reviewers, please draft your comments on your own filesystem and then copy the results into the text-entry box.  You will thus have a saved copy in case of system glitches.
+: 
+In this paper, the authors proposed a method to exploit categorical metadata for the purpose of text classification. Experiments were done on standard datasets: sentiment classification of user reviews (Yelp 2013), paper acceptance classification (AAPR 2018), and political message type classification (PolMed).
+
+First, several baselines have been proposed, including: 1) Bidirectional Long Short Term Memory (BiLSTM) networks; 2) Customization by incorporating categorical features with the document vector, which is done via incorporation of embeddings; 3) Injection of the categorical features into the scoring function with attention mechanism or into the before-last layer. 
+
+Second, by analyzing the weakness of the proposed baselines, the authors then proposed a new model, which exploit the so-called basis vectors to find the optimal weights.
+
+To my knowledge, the proposal is novel. It proved to gain improvement on three well-known datasets. The "basis vectors" are claimed to be able to transform categories, although it is still not clear to me how it can help for sparse categorical information.
+
+Please explain what "categorical metadata" means and how to exploit that. To my understanding, the category labels, as the main advantages of the paper, unfortunately, are not always existent in any classification task. It strongly depends on the data. Therefore, the method may not be applicable in some scenarios.
+
+REVIEWER CONFIDENCE: 
+3. Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty.
+
+------------------------------------------------------
+
+------------------------------------------------------
+Reviewer C:
+
+CLARITY: For the reasonably well-prepared reader, is it clear what was done and why? Is the paper well-written and well-structured?: 
+4. Understandable by most readers.
+
+
+INNOVATIVENESS: How original is the approach? Does this paper break new ground in topic, methodology, or content? How exciting and innovative is the research it describes?
+
+Note that a paper can score high for innovativeness even if its impact will be limited.
+: 
+3. Respectable: A nice research contribution that represents a notable extension of prior approaches or methodologies.
+
+SOUNDNESS/CORRECTNESS: First, is the technical approach sound and well-chosen? Second, can one trust the claims of the paper -- are they supported by proper experiments and are the results of the experiments correctly interpreted?: 
+4. Generally solid work, although there are some aspects of the approach or evaluation I am not sure about.
+
+
+RELATED WORK: Does the submission make clear where the presented system sits with respect to existing literature? Are the references adequate?
+
+Note that the existing literature includes preprints, but in the case of preprints:
+• Authors should be informed of but not penalized for missing very recent and/or not widely known work.
+• If a refereed version exists, authors should cite it in addition to or instead of the preprint.
+: 
+4. Mostly solid bibliography and comparison, but there are a few additional references that should be included. Discussion of benefits and limitations is acceptable but not enlightening.
+
+
+SUBSTANCE: Does this paper have enough substance (in terms of the amount of work), or would it benefit from more ideas or analysis?
+
+Note that papers or preprints appearing less than three months before a paper is submitted to TACL are considered contemporaneous with the submission. This relieves authors from the obligation to make detailed comparisons that require additional experiments and/or in-depth analysis, although authors should still cite and discuss contemporaneous work to the degree feasible.
+: 
+4. Represents an appropriate amount of work for a publication in this journal. (most submissions)
+
+IMPACT OF IDEAS OR RESULTS: How significant is the work described? If the ideas are novel, will they also be useful or inspirational? If the results are sound, are they also important? Does the paper bring new insights into the nature of the problem?: 
+3. Interesting but not too influential. The work will be cited, but mainly for comparison or as a source of minor contributions.
+
+REPLICABILITY: Will members of the ACL community be able to reproduce or verify the results in this paper?: 
+4. They could mostly reproduce the results, but there may be some
+variation because of sample variance or minor variations in their interpretation of the protocol or method.
+
+IMPACT OF PROMISED SOFTWARE:  If the authors state (in anonymous fashion) that their software will be available, what is the expected impact of the software package?: 
+2. Documentary: The new software will be useful to study or replicate the reported research, although for other purposes it may have limited interest or limited usability. (Still a positive rating)
+
+IMPACT OF PROMISED DATASET(S): If the authors state (in anonymous fashion) that datasets will be released, how valuable will they be to others?: 
+2. Documentary: The new datasets will be useful to study or replicate the reported research, although for other purposes they may have limited interest or limited usability. (Still a positive rating)
+
+
+TACL-WORTHY AS IS? In answering, think over all your scores above. If a paper has some weaknesses, but you really got a lot out of it, feel free to recommend it. If a paper is solid but you could live without it, let us know that you're ambivalent.
+
+Reviewers: after you save this review form, you'll have to make a confidential recommendation to the editors via pull-down menu as to: what degree of revision would be needed to make the submission eventually TACL-worthy?
+: 
+4. Worthy: A good paper that is worthy of being published in TACL.
+
+
+Detailed Comments for the Authors
+
+Reviewers, please draft your comments on your own filesystem and then copy the results into the text-entry box.  You will thus have a saved copy in case of system glitches.
+: 
+This paper presents a method for customized text classification that is commonly done by a simple concatenation of categorical metadata information. Specifically, the authors propose to use basis vectors to incorporate metadata information. The authors show how to apply their technique into different layers of a BiLSTM text classification model. The proposed method reduces the number of parameters greatly and experiments on three datasets---Yelp, AAPR, PolMed---demonstrated the benefits of their proposed approach compared to baselines. Various analysis including semantics of the learned basis vectors, performance on sparse categories, experiments on zero-shot settings are also presented.
+
+I think this is a good paper that makes progress on customized text classification. The proposed method is carefully evaluated on multiple datasets and compared with a reasonable baseline. The results are convincing enough to show that the proposed method is better, both in terms of performance and space complexity. One thing I would like to see for reference is state of the art results on each of the datasets used in the experiments. Table 3 and 4 are supposed to show this, but it is not clear and could be improved since for example in Table 3 there are just abbreviations of many models without citations. I understand that this is a resubmission, and I think the authors have addressed the main concerns in the previous reviews.
+
+REVIEWER CONFIDENCE: 
+4. Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings.
+
+------------------------------------------------------
+________________________________________________________________________
+Transactions of the Association for Computational Linguistics
+https://www.transacl.org/ojs/index.php/tacl/
