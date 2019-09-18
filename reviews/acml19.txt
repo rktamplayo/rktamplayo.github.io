@@ -1,0 +1,105 @@
+Reviewer #1
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+This paper presents a set of models for transfer learning for sentiment classification among texts of different length, i.e. short to long and long to short. Experiments are done on both English and Korean datasets.
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Above Average
+3. Correctness (Is the paper technically correct?)
+There are minor flaws
+4. Novelty (Does the paper show sufficiently new findings or just known results?)
+Above Average
+5. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Above Average
+6. Overall Rating
+Weak Accept
+7. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+- Cross length transfer is an interesting task, and is not studied before. However, I expect to see more in-depth analysis on what has been transfered from short to long text, and vice versa. For instance, text of different lengths will have different discourse structure, how is this reflected in the transfer learning?
+
+- Furthermore, for long text, different topics might be discussed, but for short ones, the author may only focus on one. The authors can further show the transfer effect based on topical analysis.
+
+- The results in Fig 3 should be better explained on why some models are doing better than others, and what's the intuition behind that.
+
+- Overall, the presentation on tables and figures can be improved.
+8. Reviewer confidence
+Reviewer is knowledgeable
+Reviewer #2
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+The paper presents a neural architecture based on CNN and MIL for learning sentiment classifiers that can somehow transfer knowledge between the shot and the long reviews. The main contributions of the paper could be: 1) the three datasets used in the experiments, 2) the proposed transfer learning model.
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Below Average
+3. Correctness (Is the paper technically correct?)
+Paper is technically correct
+4. Novelty (Does the paper show sufficiently new findings or just known results?)
+Below Average
+5. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Below Average
+6. Overall Rating
+Weak Reject
+7. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+The paper introduces the concepts of cross length transfer, where a classifier learned on a set of long reviews is used to predict polarity labels of the corresponding short reviews from the same domain, and vice versa.
+
+Table 1 shows the TL difference between OC and IC, which motivates the proposed methods. It is possible to show the TL of the proposed methods?
+
+Table 3 shows that the performance of Long to short is worse than the short to long case for all the models. Can author(s) provide some explanation? Is it possible that in the testing stage, short reviews are very sparse so that there is not enough signal passing throw the network to compute the probabilities?
+what are the fine-grained datasets?
+
+It would still be good to check how the number of reviews in training could affect the prediction performance, particularly in the case of short to long.
+
+Besides, one might wonder how the proposed method performs compared to the state of the art method used in sentimental classification, listed in https://github.com/sebastianruder/NLP-progress/blob/master/english/sentiment_analysis.md
+
+The idea of using ablation test on training mechanism is good. It shows how different parts would affect the prediction performance.
+8. Reviewer confidence
+Reviewer's evaluation is an educated guess
+Reviewer #3
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+The paper proposes a neural model to transfer between textual datasets with different tasks. The proposed approach is evaluated in few datasets.
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Below Average
+3. Correctness (Is the paper technically correct?)
+There are minor flaws
+4. Novelty (Does the paper show sufficiently new findings or just known results?)
+Below Average
+5. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Below Average
+6. Overall Rating
+Weak Accept
+7. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+I am not convinced that this task could be relevant to applications in sentiment. Usually in long reviews one wants to break them down to individual sentences which are then scored to get the sentiment. In case one wants an overall score, the sentence scores can be averaged.
+
+Indeed a long review may have multiple sentiments.
+
+Experimental part can be enhanced with more challenging datasets.
+
+Overal an ok paper. I am not convinced though about the practical aspect of the task.
+8. Reviewer confidence
+Reviewer is an expert
+Reviewer #4
+Questions
+1. Summary of the paper (Summarize the main claims/contributions of the paper.)
+This paper defined a new task called Cross Length Transfer (CLT) to check the transferability across training text classification models.
+After that, it proposed two models: a baseline model called BaggedCNN, and LeTraNets.
+The experiments on three datasets demonstrate the proposed LeTraNets's superior performances.
+2. Clarity (Assess the clarity of the presentation and reproducibility of the results.)
+Above Average
+3. Correctness (Is the paper technically correct?)
+Paper is technically correct
+4. Novelty (Does the paper show sufficiently new findings or just known results?)
+Above Average
+5. Significance (Does the paper contribute a major breakthrough or an incremental advance?)
+Above Average
+6. Overall Rating
+Weak Accept
+7. Detailed comments. (Explain the basis for your ratings while providing constructive feedback.)
+This paper introduced an interesting task, Cross Length Transfer.
+Besides, It also proposed a model called LeTraNets to address this new task.
+
+The paper is well-written and easy for understanding, and the core idea is introduced in detail.
+Experiments on three datasets show that the proposed model is superior to the comparative models.
+
+Minor negative aspects of the paper is about the experiment:
+Pre-training is also a possible solution for transfer tasks.
+Considering that contextual word embeddings model or sentence representation model like ELMO, GPT, and BERT have achieved great successes on text classification, it would be more solid and convincing if the authors introduce these models as baselines.
+8. Reviewer confidence
+Reviewer's evaluation is an educated guess
