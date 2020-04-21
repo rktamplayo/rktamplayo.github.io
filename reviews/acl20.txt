@@ -1,0 +1,168 @@
+============================================================================ 
+ACL 2020 Reviews for Submission #384
+============================================================================ 
+
+Title: Unsupervised Opinion Summarization with Noising and Denoising
+Authors: Reinald Kim Amplayo and Mirella Lapata
+============================================================================
+                            META-REVIEW
+============================================================================ 
+
+Comments: The paper presents a novel method for abstractive opinion summarization that can be trained on a synthetic dataset, automatically created  from  a user reviews corpus. The approach delivers substantial improvements over both abstractive and extractive baselines on two standard datasets.
+One weakness of the proposal is that it would struggle with long documents.
+One more serious concern is that the proposal assumes that the consensus among information is what a summary of opinions should express. This assumption is troublesome as controversial aspects are also really important information that should be extracted and summarized from a set of reviews.
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+What is this paper about, what contributions does it make, what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+The paper addresses the task of opinion summarization in settings or domains where there are no reference summaries available. The authors propose to create a synthetic corpus of document set/summary pairs by treating existing documents as "summaries" and creating "document sets" by adding noise to the "summaries." They introduce three linguistically-motivated noising techniques and show that a system trained on their synthetic data outperforms existing unsupervised methods and approaches the performance of a SOTA supervised system.
+
+Strengths:
+- The proposed approach could also be used in a semi-supervised setting to augment a small amount of available reference summaries. I would be interested to see the performance of a system trained on both the ground truth summaries and the synthetic data.
+- The approach is applicable to other multi-document summarization settings, although I am concerned about how it would handle longer documents (see below).
+- The paper is well-written and the problem being addressed is well-motivated.
+
+Weaknesses:
+- The approach seems as though it would struggle with long documents. Each document is represented by a fixed-size encoding, and the encodings in a document set are used to compute the fixed-size aggregate encoding, which is meant to represent the original review that was noised. On long inputs, this approach would lose some information compared to eg. LexRank, or other sentence-level approaches. The Rotten Tomatoes dataset consists of mostly single-sentence reviews; Yelp is longer but still not approaching the length of eg. a news article. While this issue is unlikely to be a problem for opinion summarization, the approach may not be as applicable to other multi-document settings with longer documents.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+The proposed approach is applicable to multi-document summarization in general, and it addresses the common problem of domains where reference summaries are unavailable.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+While the idea is exciting, I worry that the approach could not be used with long documents, limiting its practical usefulness in other domains.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 4
+
+Questions for the Authors(s)
+---------------------------------------------------------------------------
+Chunk-level noising can create grammatically strange, disfluent, or even contradictory pseudo-reviews. Does this affect the performance of the trained system? If only token-level noising were used, what would be the effect? Or stronger constraints on which chunks can be placed where?
+
+For document-level noising, are documents that are also serving as "summaries" in the synthetic dataset eligible to be chosen as pseudo-reviews for a different "summary"?
+
+Also for document-level noising, with IDF weighting, the most similar documents in the corpus are likely to be other reviews of the same film/main actor/restaurant. To what extent does document-level noising change the topic distribution of the pseudo-reviews? It seems to me that they would stay quite similar to that of the original "summary" (whereas token/chunk-level noising would change it more drastically). How many topics were there?
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+What is this paper about, what contributions does it make, what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+This paper addresses summarization as a a denoising task.  The model, which focuses on multi-doc review based data consolidates a number of film/business reviews into a single summary by treating all irrelevant information across reviews as noise and eliminating that from the final output.  To accomplish this task the authors generate synthetic noisy data from each individual review at training time, and forcing the model to reconstruct the original review, with the intuition that the consensus amongst information is the non-synthetic aspect.  The generated noise is applied at various levels of granularity across the input ranging between token/chunk substitutions to document level replacement from elsewhere in the corpus.  The modeling components are standard RNN based neural encoders which reconstruct the original summary, along with other relevant semi-recent techniques (e.g. attn, coverage).  Furthermore the model applies an objective to force the model to stay on topic !
+ to the original review(s).  Overall the system outperforms recent baselines by a large margin (among some metrics), advocates for all introduced components, and performs desired qualitative analysis.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+This is a novel, unsupervised approach to distilling information across several inputs (i.e. multi-doc reviews).  This is quite useful for downstream applications (e.g. Sentiment analysis) for such data.
+
+The work is measured against appropriate baselines, and the numbers indicate the validity of the proposed method.  This includes ablation in table 4, proving the need for various noising, the  discriminator component, as well as the qualitative analysis between this system and MeanSum performed by AMT.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+Robustness analysis via cross domain testing (i.e. RT model on Yelp) is missing.  It is difficult to know how flexible these systems are since there is no data on corpus biases.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 4
+
+Questions for the Authors(s)
+---------------------------------------------------------------------------
+For the final objective, is it not prudent to weigh the importance by a hyperparameter rather than just ablating out the \mathcal{L}_{disc}?
+Why are reviews with more than 3 non-alphanumeric characters removed?
+How is the Oracle considered an oracle summary?  This should be renamed.
+In general for summarization, R2 is used if only a single metric is reported.  Why is RL used in table 4?
+The use of a topic model to aid the discriminator was a large contribution of the paper.  Why is LDA the only one discussed?  Were others considered/tested?
+---------------------------------------------------------------------------
+
+
+Additional Suggestions for the Author(s)
+---------------------------------------------------------------------------
+The notation in section 3 quickly gets out of hand.  As an example \textbf{X} becomes overused and over annotated with various sub/super-scripts.  This could perhaps, be cleaned up with other representations.
+
+Rephrase references to Figure 2 as just (Fig 2 (a)).  Currently they are dictated as if they provide more information than just architecture composition.
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+What is this paper about, what contributions does it make, what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+The paper presents a novel unsupervised method for abstractive opinion summarization. A synthetic dataset created from a user reviews corpus is used as the pseudo-review input, and several techniques are proposed to denoise the input and generate abstractive summary. Experiments on two datasets show that the proposed model brings substantial improvements over both abstractive and extractive baselines.
+
+Strength:
+1. Overall, this work is meaningful, and the proposed approach is well designed. 
+2. The experiments have been conducted comprehensively, showing the superior performance of the proposed method, compared to the baselines.
+
+Weakness:
+1. It would be better to provide more implementation details of the proposed method. For example, in decoder, how to develop the attention with and without copy mechanism. 
+2. More advanced methods should be compared in the quantitative evaluation, e.g., “Unsupervised Multi-Document Opinion Summarization as Copycat-Review Generation”.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+1. Overall, this work is meaningful, and the proposed approach is well designed. 
+2. The experiments have been conducted comprehensively, showing the superior performance of the proposed method, compared to the baselines.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+1. It would be better to provide more implementation details of the proposed method. For example, in decoder, how to develop the attention with and without copy mechanism. 
+2. More advanced methods should be compared in the quantitative evaluation, e.g., “Unsupervised Multi-Document Opinion Summarization as Copycat-Review Generation”.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
+
+Questions for the Authors(s)
+---------------------------------------------------------------------------
+Please see the in-depth review.
+---------------------------------------------------------------------------
+
+
+Missing References
+---------------------------------------------------------------------------
+Please see the in-depth review.
+---------------------------------------------------------------------------
+
+
+Typos, Grammar, and Style
+---------------------------------------------------------------------------
+Please see the in-depth review.
+---------------------------------------------------------------------------
+
+
+Additional Suggestions for the Author(s)
+---------------------------------------------------------------------------
+Please see the in-depth review.
+---------------------------------------------------------------------------
