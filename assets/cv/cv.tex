@@ -1,0 +1,209 @@
+\documentclass[11pt]{article}
+
+% # FONTS
+
+\usepackage[T1]{fontenc}
+\renewcommand*\ttdefault{lmvtt}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{amsmath}
+\usepackage[scaled=0.92]{PTSans}
+
+% # GEOMETRY
+
+\usepackage[
+  paper  = letterpaper,
+  left   = 1.0in,
+  right  = 1.0in,
+  top    = 1.25in,
+  bottom = 1.25in,
+]{geometry}
+\usepackage[final,expansion=alltext]{microtype}
+\usepackage[english]{babel}
+\usepackage[parfill]{parskip}
+\usepackage{afterpage}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{pifont}     % needed for dingbats for colophon
+
+% # COLOR
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{shadecolor}{gray}{0.9}
+
+% # BIBLIOGRAPHY
+
+\usepackage{bibentry}
+\let\oldbibentry\bibentry
+\renewcommand{\bibentry}[1]{\oldbibentry{#1}.}
+\def\FormatName#1{%
+  \def\myname{RK Amplayo}%
+  \edef\name{#1}%
+  \ifx\name\myname
+    \textbf{#1}%
+  \else
+    #1%
+  \fi
+}
+
+
+% # HEADERS
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\lhead{\textcolor{gray}{\emph{Reinald Kim Amplayo}}}
+\rhead{\textcolor{gray}{\thepage}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Renew section
+\renewcommand{\section}[1]
+{\vspace{1.0\baselineskip}{\Large\textbf{#1}}}
+
+% Generate colophon at the end of the document
+\newcommand{\makecolophon}
+{\centering\ding{118} Last modified on \today~\ding{118}}
+
+\begin{document}
+\bibliographystyle{plain-custom}
+\nobibliography{bib}
+\thispagestyle{empty}
+
+\parbox[c][0.5in]{3.4in}{\huge \textbf{Reinald Kim Amplayo}}
+\parbox[c][0.5in]{2.5in}{%
+\small
+\vspace{17ex}
+\texttt{reinald.kim@ed.ac.uk}
+\texttt{https://rktamplayo.github.io/}
+}
+
+Ph.D. Student \\
+University of Edinburgh \\
+ILCC, School of Informatics \\
+Edinburgh, UK
+
+\section{Education}
+
+\begin{itemize}[leftmargin=12pt]
+  \item[] M.A.~ Library and Information Science, Yonsei University \hfill 2016--2018 \\
+  {\footnotesize
+  Thesis: ``System of Contexts: Generative Models for Unsupervised Sense Disambiguation''}
+  
+  \item[] B.S.~ Information Technology, Ateneo de Davao University  \hfill 2009--2013 \\
+  {\footnotesize
+  Thesis: ``Automated Essay Grading using Reflective Random Indexing''}
+\end{itemize}
+
+\section{Employment}
+
+\begin{itemize}[leftmargin=12pt]
+  \item[] Research Intern \hfill 2020 \\
+  Brain Team, Google Mountain View \\
+  Host: Peter J. Liu
+\end{itemize}
+
+\section{Awards}
+
+\begin{itemize}[leftmargin=12pt]
+  \item[] Google PhD Fellowship 
+  {\small (\$180,000)}
+  \hfill 2019--2022
+  
+  \item[] Principal’s Career Development Scholarship, University of Edinburgh 
+  {\small ($\sim$\$140,000)}
+  \hfill 2018--2021\\
+  {\footnotesize (Terminated midway and accepted the Google PhD Fellowship)}
+  
+  \item[] Korean Government Scholarship Program Award, NIIED 
+  {\small ($\sim$\$40,000)} 
+  \hfill 2015--2018
+\end{itemize}
+
+\section{Publications}
+
+\textsc{Conference and Journal Articles}
+\begin{enumerate}
+  \item \bibentry{amplayo2020unsupervised}
+  \item \bibentry{amplayo2019text}
+  \item \bibentry{amplayo2019rethinking}
+  \item \bibentry{kim2019categorical}
+  \item \bibentry{amplayo2019autosense}
+  \item \bibentry{cho2018adversarial}
+  \item \bibentry{amplayo2018cold}
+  \item \bibentry{amplayo2018translations}
+  \item \bibentry{amplayo2018entity}
+  \item \bibentry{yeo2018visual}
+  \item \bibentry{amplayo2018incorporating}
+  \item \bibentry{amplayo2018network}
+  \item \bibentry{amplayo2017aspect}
+  \item \bibentry{amplayo2017adaptable}
+\end{enumerate}
+
+\textsc{Preprints and Workshop Articles}
+\begin{enumerate}[resume]
+  \item \bibentry{amplayo2019informative}
+  \item \bibentry{amplayo2019evaluating}
+  \item \bibentry{park2019thisiscompetition}
+  \item \bibentry{amplayo2016building}
+\end{enumerate}
+
+\section{Teaching}
+\begin{enumerate}
+  \item
+  Teaching Assistant |
+  University of Edinburgh
+  \hfill 2019
+  \\
+  Informatics MSc Dissertation
+  
+  \item
+  Lecturer | Ateneo de Davao University
+  \hfill 2013--2014
+  \\
+  Competitive Programming \\
+  Data Structures and Algorithms \\
+  Discrete Structures \\
+  Introduction to Computer Programming \\
+  Database Systems
+\end{enumerate}
+
+\section{Professional Service}
+
+% \textsc{Senior Program Committee}
+% \textsc{Associate Editor and Editorial Board}
+\textsc{Conference Reviewing}
+\begin{itemize}[leftmargin=12pt]
+  \item[] Annual Meeting of the Association for Computational Linguistics (ACL) \hfill 2019--2020
+  \item[] Empirical Methods in Natural Language Processing (EMNLP) \hfill 2019--2020
+  \item[] International Conference on Machine Learning (ICML) \hfill 2020
+  \item[] Asia-Pacific Chapter of the Association for Computational Linguistics (AACL) \hfill 2020
+  \item[] North American Chapter of the Association for Computational Linguistics (NAACL) \hfill 2019
+  \item[] Joint Conference on Lexical and Computational Semantics (*SEM) \hfill 2019
+\end{itemize}
+
+% \textsc{Workshop Organization}
+\textsc{Professional Memberships}
+\begin{itemize}[leftmargin=12pt]
+  \item[] Association for Computational Linguistics (ACL) \hfill 2018--
+  \item[] Association for the Advancement of Artificial Intelligence (AAAI) \hfill 2019
+\end{itemize}
+
+% \textsc{Grant Reviewing}
+% \textsc{Former Ph.D. Students}
+% \textsc{Current Ph.D. Students}
+% \textsc{Postdoctoral Fellows}
+% \textsc{Other Ph.D. Thesis Committees}
+% \textsc{Mentoring}
+% \textsc{Advising and Consulting}
+
+% \section{Invited Talks and Panels}
+
+% \begin{enumerate}
+%   \item Max Planck Institute for Intelligent Systems
+%   -- \textsc{t\"{u}bingen, de}
+%   \hfill 2015
+% \end{enumerate}
+
+% \vfill
+% \makecolophon
+
+\end{document}
