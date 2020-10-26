@@ -1,0 +1,116 @@
+============================================================================ 
+COLING 2020 Reviews for Submission #1096
+============================================================================ 
+
+Title: Retrieving Inductive Bias of Attribute as Reference for Review Generation
+Authors: Jihyeok Kim, Seungtaek Choi, Reinald Kim Amplayo and Seung-won Hwang
+
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Relevance (1-5): 5
+               Readability/clarity (1-5): 5
+                       Originality (1-5): 3
+   Technical correctness/soundness (1-5): 4
+                   Reproducibility (1-5): 4
+                         Substance (1-5): 3
+
+Detailed Comments
+---------------------------------------------------------------------------
+The paper studies review generation given a set of attribute identifiers such as user ID, product ID and rating. As this information is scarce, the authors propose to select more information related to these attributes to enrich the generation process. The evaluation results, obtained by comparison with other approaches and human judgments, are promising.
+
+The paper is appropriate for the conference, well-written and easy to follow. The addressed problem is interesting, and the approach and obtained results are promising. The idea of "enriching" the input information by collecting other reviews that are related to the input is interesting and solves the problem of having almost no information at the beginning of the process.
+
+In the SL-Reflect part, it is said that a ground-truth review Y is obtained. This Y review is very important for the rest of the process, but how is it obtained? Would it be available if this is the first review of a particular product or by a specific user?
+
+I am also curious about how this technology could be used in the real world... As a user who reads reviews when choosing to buy something, do I want to rely on "false" reviews that could not be accurate or express the real characteristics of the product? On the other hand, I think this kind of approach could be very useful to give a user the first draft of his/her review, which can later be corrected in a short time and be more beneficial for other users...
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+            Overall recommendation (1-5): 4
+                        Confidence (1-5): 2
+                       Presentation Type: Oral
+     Recommendation for Best Paper Award: No
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Relevance (1-5): 4
+               Readability/clarity (1-5): 3
+                       Originality (1-5): 4
+   Technical correctness/soundness (1-5): 4
+                   Reproducibility (1-5): 5
+                         Substance (1-5): 4
+
+Detailed Comments
+---------------------------------------------------------------------------
+This paper studies the review generation problem. Given the user ID, product ID and rating, the model is required to generate a related review that is consistent with the rating score. In this paper, they propose to use retrieved references to help improve the performance of the generation model. To get the retrieved references, the authors propose the REFLECT framework. With the textual references, they use the encoder-decoder model with the attention and copying mechanism. 
+
+The motivation to retrieve references is intuitive. And the experimental settings are reasonable. However, this paper should be refined as there are several typos and grammatical errors. Also, the missing of descriptions for some annotations makes this paper hard to follow. For example, what does q mean in equation 3? 
+A small question: the settings of the dimension of parameters are quite different. How do you choose the dimension?
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+            Overall recommendation (1-5): 3
+                        Confidence (1-5): 3
+                       Presentation Type: Poster
+     Recommendation for Best Paper Award: No
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Relevance (1-5): 5
+               Readability/clarity (1-5): 3
+                       Originality (1-5): 3
+   Technical correctness/soundness (1-5): 3
+                   Reproducibility (1-5): 3
+                         Substance (1-5): 3
+
+Detailed Comments
+---------------------------------------------------------------------------
+This paper focuses on the task of review generation, which aims to generate reviews leveraging references. It consists of three components, including a coarse-grained retrieval module, a fine-grained retrieval module, and a generation module. This paper conducts experiments on the Amazon book review dataset, with automatic and human evaluations, to verify the performance.
+
+Pros:
+It is well written and easy to understand.
+It utilizes the information of references with identifiers retrieval to assist the review generation, which is of novelty in review generation.
+
+Cons:
+The baselines of review generation are few and weak, which should be added more state-of-arts models of review generation, such as “Generating long and informative reviews with aspect-aware coarse-to-fine decoding”, “Towards controllable and personalized review generation”. 
+The influence of classifier in the RL module has not been described in the paper, which is important for the references selection.
+The ablation study is not sufficient, as this work consists of multiple modules, such as coarse-grained REFLECT, fine-grained REFLECT, and generation module, whose effect should be verified. 
+The automatic and human evaluation is somewhat simple, which should consist of more specific metrics, such as ROUGE, fluency, diversity, since the purpose of this work is to improve the generation quality with references. 
+The related works miss a series of works about review generation, which are closely related to this work.
+
+1.Li J, Zhao W X, Wen J R, et al. Generating Long and Informative Reviews with Aspect-Aware Coarse-to-Fine Decoding[C]//Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. 2019: 1969-1979 2.Li P, Tuzhilin A. Towards Controllable and Personalized Review Generation[C]//Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 2019: 3228-3236. 3.Ni J, McAuley J. Personalized review generation by expanding phrases and attending on aspect-aware representations[C]//Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers). 2018: 706-711.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+            Overall recommendation (1-5): 2
+                        Confidence (1-5): 3
+                       Presentation Type: Poster
+     Recommendation for Best Paper Award: No
+

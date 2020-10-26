@@ -1,0 +1,441 @@
+------------------------------------------------------
+------------------------------------------------------
+....THE REVIEWS....
+------------------------------------------------------
+------------------------------------------------------
+Reviewer A:
+
+CLARITY: For the reasonably well-prepared reader, is it clear what was done
+and why? Is the paper well-written and well-structured?: 
+  4. Understandable by most readers.
+
+
+INNOVATIVENESS: How original is the approach? Does this paper break new
+ground in topic, methodology, or content? How exciting and innovative is the
+research it describes?
+
+Note that a paper can score high for innovativeness even if its impact will
+be limited.
+: 
+  3. Respectable: A nice research contribution that represents a notable
+extension of prior approaches or methodologies.
+
+SOUNDNESS/CORRECTNESS: First, is the technical approach sound and
+well-chosen? Second, can one trust the claims of the paper -- are they
+supported by proper experiments and are the results of the experiments
+correctly interpreted?: 
+  4. Generally solid work, although there are some aspects of the approach or
+evaluation I am not sure about.
+
+
+RELATED WORK: Does the submission make clear where the presented system sits
+with respect to existing literature? Are the references adequate?
+
+Note that the existing literature includes preprints, but in the case of
+preprints:
+Authors should be informed of but not penalized for missing very recent
+and/or not widely known work.
+If a refereed version exists, authors should cite it in addition to or
+instead of the preprint.
+: 
+  5. Precise and complete comparison with related work. Benefits and
+limitations are fully described and supported.
+
+
+SUBSTANCE: Does this paper have enough substance (in terms of the amount of
+work), or would it benefit from more ideas or analysis?
+
+Note that papers or preprints appearing less than three months before a
+paper is submitted to TACL are considered contemporaneous with the
+submission. This relieves authors from the obligation to make detailed
+comparisons that require additional experiments and/or in-depth analysis,
+although authors should still cite and discuss contemporaneous work to the
+degree feasible.
+: 
+  4. Represents an appropriate amount of work for a publication in this
+journal. (most submissions)
+
+IMPACT OF IDEAS OR RESULTS: How significant is the work described? If the
+ideas are novel, will they also be useful or inspirational? If the results
+are sound, are they also important? Does the paper bring new insights into
+the nature of the problem?: 
+  3. Interesting but not too influential. The work will be cited, but mainly
+for comparison or as a source of minor contributions.
+
+REPLICABILITY: Will members of the ACL community be able to reproduce or
+verify the results in this paper?: 
+  4. They could mostly reproduce the results, but there may be some
+variation because of sample variance or minor variations in their
+interpretation of the protocol or method.
+
+IMPACT OF PROMISED SOFTWARE:  If the authors state (in anonymous fashion)
+that their software will be available, what is the expected impact of the
+software package?: 
+  1. No usable software released.
+
+IMPACT OF PROMISED DATASET(S): If the authors state (in anonymous fashion)
+that datasets will be released, how valuable will they be to others?: 
+  3. Potentially useful: Someone might find the new datasets useful for their
+work.
+
+
+TACL-WORTHY AS IS? In answering, think over all your scores above. If a
+paper has some weaknesses, but you really got a lot out of it, feel free to
+recommend it. If a paper is solid but you could live without it, let us know
+that you're ambivalent.
+
+Reviewers: after you save this review form, you'll have to make a
+confidential recommendation to the editors via pull-down menu as to: what
+degree of revision would be needed to make the submission eventually
+TACL-worthy?
+: 
+  4. Worthy: A good paper that is worthy of being published in TACL.
+
+
+Detailed Comments for the Authors
+
+Reviewers, please draft your comments on your own filesystem and then copy
+the results into the text-entry box.  You will thus have a saved copy in
+case of system glitches.
+: 
+  The paper presents an unsupervised system for extractive opinion
+summarization, inspired by vector-quantized variational autoencoders
+(VQ-VAEs). The proposed system combines Transformer with the discretization
+bottleneck of VQ-VAE, and is trained via sentence reconstruction. 
+
+Overall, the paper is very well presented. The descriptions are generally
+clear, well-illustrated and easy to follow. The experiments are well
+thought-out and results seem promising. Aside from the proposed method, the
+paper also promises to release a new dataset containing 1,050 human-written,
+generic and aspect summaries of 50 hotels for evaluation of opinion
+summarization systems.
+
+The proposed model showed promising results in several aspects (Table 4),
+but it remains unclear to me how the QT model inherently deals with
+redundancy. The sentence sampling process Eq.(8) seems to have a significant
+impact on the summarization performance (Table 2). However, the description
+is somewhat brief (Line 394-417). It would be great if the authors can
+elaborate on that, providing more intuition and justification on the
+robustness of the sampling process. Given the "clustering" nature of the
+proposed work, I would also encourage the authors to compare the proposed
+method with a clustering approach (or graphical models) for extractive
+summarization.
+
+REVIEWER CONFIDENCE: 
+  4. Quite sure. I tried to check the important points carefully. It's
+unlikely, though conceivable, that I missed something that should affect my
+ratings.
+
+------------------------------------------------------
+
+------------------------------------------------------
+Reviewer B:
+
+CLARITY: For the reasonably well-prepared reader, is it clear what was done
+and why? Is the paper well-written and well-structured?: 
+  4. Understandable by most readers.
+
+
+INNOVATIVENESS: How original is the approach? Does this paper break new
+ground in topic, methodology, or content? How exciting and innovative is the
+research it describes?
+
+Note that a paper can score high for innovativeness even if its impact will
+be limited.
+: 
+  3. Respectable: A nice research contribution that represents a notable
+extension of prior approaches or methodologies.
+
+SOUNDNESS/CORRECTNESS: First, is the technical approach sound and
+well-chosen? Second, can one trust the claims of the paper -- are they
+supported by proper experiments and are the results of the experiments
+correctly interpreted?: 
+  3. Fairly reasonable work. The approach is not bad, and at least the main
+claims are probably correct, but I am not entirely ready to accept them
+(based on the material in the paper).
+
+
+RELATED WORK: Does the submission make clear where the presented system sits
+with respect to existing literature? Are the references adequate?
+
+Note that the existing literature includes preprints, but in the case of
+preprints:
+Authors should be informed of but not penalized for missing very recent
+and/or not widely known work.
+If a refereed version exists, authors should cite it in addition to or
+instead of the preprint.
+: 
+  4. Mostly solid bibliography and comparison, but there are a few additional
+references that should be included. Discussion of benefits and limitations
+is acceptable but not enlightening.
+
+
+SUBSTANCE: Does this paper have enough substance (in terms of the amount of
+work), or would it benefit from more ideas or analysis?
+
+Note that papers or preprints appearing less than three months before a
+paper is submitted to TACL are considered contemporaneous with the
+submission. This relieves authors from the obligation to make detailed
+comparisons that require additional experiments and/or in-depth analysis,
+although authors should still cite and discuss contemporaneous work to the
+degree feasible.
+: 
+  3. Leaves open one or two natural questions that should have been pursued
+within the paper.
+
+IMPACT OF IDEAS OR RESULTS: How significant is the work described? If the
+ideas are novel, will they also be useful or inspirational? If the results
+are sound, are they also important? Does the paper bring new insights into
+the nature of the problem?: 
+  3. Interesting but not too influential. The work will be cited, but mainly
+for comparison or as a source of minor contributions.
+
+REPLICABILITY: Will members of the ACL community be able to reproduce or
+verify the results in this paper?: 
+  4. They could mostly reproduce the results, but there may be some
+variation because of sample variance or minor variations in their
+interpretation of the protocol or method.
+
+IMPACT OF PROMISED SOFTWARE:  If the authors state (in anonymous fashion)
+that their software will be available, what is the expected impact of the
+software package?: 
+  3. Potentially useful: Someone might find the new software useful for their
+work.
+
+IMPACT OF PROMISED DATASET(S): If the authors state (in anonymous fashion)
+that datasets will be released, how valuable will they be to others?: 
+  3. Potentially useful: Someone might find the new datasets useful for their
+work.
+
+
+TACL-WORTHY AS IS? In answering, think over all your scores above. If a
+paper has some weaknesses, but you really got a lot out of it, feel free to
+recommend it. If a paper is solid but you could live without it, let us know
+that you're ambivalent.
+
+Reviewers: after you save this review form, you'll have to make a
+confidential recommendation to the editors via pull-down menu as to: what
+degree of revision would be needed to make the submission eventually
+TACL-worthy?
+: 
+  2. Leaning against: I'd rather not see it appear in TACL.
+
+
+Detailed Comments for the Authors
+
+Reviewers, please draft your comments on your own filesystem and then copy
+the results into the text-entry box.  You will thus have a saved copy in
+case of system glitches.
+: 
+  This paper produced a large opinion summarization dataset and also proposed
+a new method to generate an extractive opinion summary for each entity and
+for selected aspects based on a set of reviews. However, I have some major
+concerns about the paper. 
+
+Regarding the manually created dataset for opinion summarization, I have the
+following questions: 
+1.  In the first step of sentence selection, how did you ask the annotator to
+do the selection, focusing on a summary of the opinion of the entity or on
+the main aspects? Any annotation instructions or document? 
+2.  The sentence selection must be highly subjective. What kind of agreement
+did you get? If only those sentences with 4 votes are selected, it is
+possible that no sentence or very few sentences are selected. Then the
+resulting sentences may not represent a good summary of the review. This is
+problematic. Am I missing something? 
+3.  Due to this problem, how do you know that you are producing a good
+general summary of a set of reviews? 
+4.  For Aspect Summaries, again due to the above problem, a lot of aspects
+related sentences may be lost and then it is not possible to produce a good
+aspect-specific summary. 
+
+Therefore, it is unclear whether this manually created data for opinion
+summarization is of good quality, which affects the validity of the
+experiment results as well. If the sentences are not chosen properly, you
+may get wrong summaries. For example, for an aspect that most people are
+positive about, due to the selection/voting issue, it may end up that more
+people are negative about it. The aspect accuracy and positive and negative
+polarity proportions are important for opinion summarization. See Bing
+Liu’s 2012 book titled “sentiment analysis and opinion mining” about
+this issue.  
+
+I also have some concerns about the evaluation measures used in the
+experiments. I believe that for opinion summary evaluation, it is not enough
+to simply use the measures for general text summarization. I understand that
+using ROUGE is a common practice for text summarization evaluation, but for
+opinion summarization, getting the correct polarities is of critical
+importance. Hence, in addition to the ROUGE measures, an accuracy evaluation
+about the opinion polarity comparison based on the same aspect should be
+provided by comparing those in the gold data and those in the extracted
+sentences. It does not matter how good the ROUGE scores are, if the
+sentiment polarities are incorrect, the results are not acceptable.
+
+The same goes with the user study. It is clearly possible to produce a set
+of accuracy results about the correctness of aspects and the correctness of
+their associated opinion polarities, e.g., the proportion of aspects match
+and the proportion of polarity match given the right aspect. The criteria
+used in the paper are too subjective, which should only be used when more
+objective measures are not feasible. But for opinions, aspects and
+polarities are easily verified manually.  
+
+For aspect-specific summarization, the accuracy of the polarity should also
+be provided 
+
+You stated “We present ROUGE-1/2/L F-scores on the general summarization
+portion of SPACE in Table 2.” I don’t see where the F-scores are in the
+table. 
+
+About the implementation of the system, you did not mention any validation
+set. How did you select those parameters? You did mention the development
+set, but you did not mention the training set?
+
+REVIEWER CONFIDENCE: 
+  4. Quite sure. I tried to check the important points carefully. It's
+unlikely, though conceivable, that I missed something that should affect my
+ratings.
+
+------------------------------------------------------
+
+------------------------------------------------------
+Reviewer C:
+
+CLARITY: For the reasonably well-prepared reader, is it clear what was done
+and why? Is the paper well-written and well-structured?: 
+  4. Understandable by most readers.
+
+
+INNOVATIVENESS: How original is the approach? Does this paper break new
+ground in topic, methodology, or content? How exciting and innovative is the
+research it describes?
+
+Note that a paper can score high for innovativeness even if its impact will
+be limited.
+: 
+  4. Creative: An intriguing problem, technique, or approach that is
+substantially different from previous research.
+
+SOUNDNESS/CORRECTNESS: First, is the technical approach sound and
+well-chosen? Second, can one trust the claims of the paper -- are they
+supported by proper experiments and are the results of the experiments
+correctly interpreted?: 
+  4. Generally solid work, although there are some aspects of the approach or
+evaluation I am not sure about.
+
+
+RELATED WORK: Does the submission make clear where the presented system sits
+with respect to existing literature? Are the references adequate?
+
+Note that the existing literature includes preprints, but in the case of
+preprints:
+Authors should be informed of but not penalized for missing very recent
+and/or not widely known work.
+If a refereed version exists, authors should cite it in addition to or
+instead of the preprint.
+: 
+  4. Mostly solid bibliography and comparison, but there are a few additional
+references that should be included. Discussion of benefits and limitations
+is acceptable but not enlightening.
+
+
+SUBSTANCE: Does this paper have enough substance (in terms of the amount of
+work), or would it benefit from more ideas or analysis?
+
+Note that papers or preprints appearing less than three months before a
+paper is submitted to TACL are considered contemporaneous with the
+submission. This relieves authors from the obligation to make detailed
+comparisons that require additional experiments and/or in-depth analysis,
+although authors should still cite and discuss contemporaneous work to the
+degree feasible.
+: 
+  3. Leaves open one or two natural questions that should have been pursued
+within the paper.
+
+IMPACT OF IDEAS OR RESULTS: How significant is the work described? If the
+ideas are novel, will they also be useful or inspirational? If the results
+are sound, are they also important? Does the paper bring new insights into
+the nature of the problem?: 
+  4. Some of the ideas or results will substantially help other people's
+ongoing research.
+
+REPLICABILITY: Will members of the ACL community be able to reproduce or
+verify the results in this paper?: 
+  3. They could reproduce the results with some difficulty. The settings of
+parameters are underspecified or subjectively determined, and/or the
+training/evaluation data are not widely available.
+
+IMPACT OF PROMISED SOFTWARE:  If the authors state (in anonymous fashion)
+that their software will be available, what is the expected impact of the
+software package?: 
+  3. Potentially useful: Someone might find the new software useful for their
+work.
+
+IMPACT OF PROMISED DATASET(S): If the authors state (in anonymous fashion)
+that datasets will be released, how valuable will they be to others?: 
+  3. Potentially useful: Someone might find the new datasets useful for their
+work.
+
+
+TACL-WORTHY AS IS? In answering, think over all your scores above. If a
+paper has some weaknesses, but you really got a lot out of it, feel free to
+recommend it. If a paper is solid but you could live without it, let us know
+that you're ambivalent.
+
+Reviewers: after you save this review form, you'll have to make a
+confidential recommendation to the editors via pull-down menu as to: what
+degree of revision would be needed to make the submission eventually
+TACL-worthy?
+: 
+  4. Worthy: A good paper that is worthy of being published in TACL.
+
+
+Detailed Comments for the Authors
+
+Reviewers, please draft your comments on your own filesystem and then copy
+the results into the text-entry box.  You will thus have a saved copy in
+case of system glitches.
+: 
+  This paper presented a novel opinion summarization using the Quantized
+Transformer for aspect-based summarization.  In addition, the authors also
+provided a SPACE, a new corpus for their experimental results. 
+I think the contribution is sufficient for TACL.
+
+In general, this is a very well-written paper with a clear and coherent
+presentation structure.
+Experimental results are solid, which shows a comparison with the strong
+baseline and related works.
+
+In my opinion, the method presented in the paper would work for aspect
+opinion extraction.  The key difference in comparison with other work on
+aspect-summarization is the use of VQ-VAE method.  
+
+I have a small question regarding the difference in the proposed method
+compared with the work described in [Roy and Graniger 2019].
+
+The point is that the extractive aspect-opinion summarization can be
+considered as to how to select an important sentence, which can be
+considered a binary classification for selecting important sentences. 
+Could you explain the main difference in your method when compared with the
+“paraphrase identification” presented in [Roy and Graniger 2019]
+
+Aurko Roy and David Grangier. 2019.  Unsupervised paraphrasing without
+translation. ACL 2019
+
+In the second point, you claimed that your proposed method could be easily
+accommodated with a large number of input reviews.  Do you have any evidence
+to show that, or at least please give a discussion regarding this point?
+
+In the third point, it is good that the authors can share their code and
+data for verifying their work. Currently, I could not open the link
+indicated in the paper.
+
+
+
+
+Overall, this paper can be accepted in TACL if the authors can make clear my
+question regarding the novelty and some minor points regarding their claim. 
+In addition, if the paper is accepted the authors should share their code
+and data.
+
+REVIEWER CONFIDENCE: 
+  4. Quite sure. I tried to check the important points carefully. It's
+unlikely, though conceivable, that I missed something that should affect my
+ratings.

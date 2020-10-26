@@ -1,0 +1,146 @@
+============================================================================ 
+AACL-IJCNLP 2020 Reviews for Submission #219
+============================================================================ 
+
+Title: Heads-up! Unsupervised Constituency Parsing via Self-Attention Heads
+Authors: Bowen Li, Taeuk Kim, Reinald Kim Amplayo and Frank Keller
+
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+Core Review: What is this paper about, what contributions does it make, and what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+This paper proposes a two step unsupervised parsing system. The idea is given a set of sentence and pretrained attention-based language model (PLM) , the system first uses a ranking based approach to aggregate the attention scores for factor scores, then use CKY parsing to produce an artificial treebank. The treebank is later used to train a supervised neural PCFG model for parsing.
+
+Strengths:
+1) Unsupervised parsing is a core NLP task, which has been intensively studied over year and stays challenging
+2) This work builds on the top of the recent work that connect NN to the unsupervised parsing world, which has shown to be a promising direction
+3) Distilling syntactic knowledge from dense models is an important task for deciphering the behavior of those models, which should be encouraged.
+
+Weakness:
+1) I found this paper is difficult to follow without a fair amount of context of Kim et al (2020a,b). Given lot's of notations, I would recommend using diagrams to show the syntactic distances are correlated with attention heads. See Shen et al (2018) for a good example.
+2) Unsupervised parsing has a very long history especially during the last 2 decades. The related work  should mention some of the key works in this vein, I would recommend Marecek (2016) for a fast taste.
+3) I don't think the result is strong enough, but I'm interested in the story of distilling the syntactic knowledge from PLMs, which I believe is the main contribution of this work. Given that, I think the author should focus less on the parsing performance but on what kinds of linguistic information (such as word order or head type attachment) is learned, and how they change over different language families. This should be the main focus of this work. 4) Minor point is that I don't think using dev data for tuning parameters is an usual way for unsupervised parsing (L217-220). In grammar induction, models are tuned based on the log-likelihood on the dev set, which is also unlabeled.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+See strengths
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+See weakness
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
+
+Missing References
+---------------------------------------------------------------------------
+Dan Klein and Christopher D. Manning. Corpus-based induction of syntactic structure: models of dependency and
+constituency.
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+Core Review: What is this paper about, what contributions does it make, and what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+This interesting paper presents a method of building syntactic trees based on self-attention weights from various pretrained language models (PLMs), which is special by being completely unsupervised. The method revolves around CKY parsing, with scores for the parser extracted from attention matrices.
+
+The authors identify several ways in which the basic method tends to degenerate to unpreferred solutions and try to introduce preventive measures while still carefully avoiding introduction of hyperparameters or other magical numbers, which I appreciate. The only "magical" number is the point where the authors decide to select the top 30 most-syntactically-looking attention heads to use for the parsing; I feel that it should be explained why this is 30 and not some other number, but otherwise I did not find any other hyperparameters, making the method indeed very unsupervised.
+
+To me, the most interesting part is the unsupervised selection of syntactic heads, which is based on a potentially clever idea of utilizing the tree score, produced by the CKY parser, as an estimate of the syntacticity of the attention head used to produce the scores for the parser. This is a simple idea that may or may not work, but it seems it worked fine for the authors (although I am missing some more analyses here as I mention in the Reasons to reject).
+
+The authors also include a set of experiments extracting PCFGs.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+The paper addresses a gap in the analysis of self-attentions for syntax, suggesting a complete unsupervised method for building constituency syntax trees from self-attention matrices. While the paper incorrectly claims to be the first to do so, the method they use is indeed novel, especially in the aspect of unsupervised estimation of the syntacticity of the attention heads. The whole method is remarkably successful. Unfortunately, an evaluation of the success of the head selection is not evaluated separately; if such an evaluation is added and shows positive results, then this is a very exiting piece of work. Nevertheless, the authors' unsupervised method shows accuracies competitive to other current method, all of which use some supervision, across several languages (also using an unsupervised cross-lingual approach and reaching competitive scores to monolingual methods).
+
+I also appreciate that while unsupervised methods are inherently incapable of producing linguistic labels, the authors include a way (using some supervision) to map the unsupervised labels to linguistic labels, with a considerable success. I find this to be a nice extension.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+The base of the paper is very similar to an existing paper which is not cited (see "Missing References"), the existence of which weakens the novelty of the presented work. Still, the unsupervised method of selecting syntactic heads is, to the best of my knowledge, new and interesting.
+
+The head selection method is not evaluated on its own, we only see an evaluation of the whole approach. A simple and very informative experiment would be to use the presented method without the head selection, i.e. using all of the attention heads to produce the scores instead of just the top 30 most syntactic heads. The non-referred pre-existing paper suggests that the upper bound for head selection might be very roughly around +10% F1 absolute (modulo the differences in the works), so it would be very interesting to see how well the unsupervised head selection works. Since I find the unsupervised head selection to be the main contribution of the paper, I believe it is quite important to reliably evaluate its effect. I would go as far as to suggest not accepting the paper unless this evaluation is added (and shows that the head selection indeed works well).
+
+The paper is somewhat hard to understand for me. I believe the method is described in sufficient detail (using many equations and mathematical expressions), but I would appreciate an inclusion of a high-level description explaining the core of the method in an easy-to-follow way.
+
+I am also somewhat confused about the results, as it is not entirely clear to me which of the setups is which (especially in Table 1).
+
+The story of the paper is a bit unclear. While the paper first positions itself as an interpretation paper, aiming to analyze what kind of syntax PLMs learn, its contents then mostly revolve about the practical task of obtaining reasonably accurate syntax trees in an unsupervised way. The extracted trees are then analyzed only quantitatively by comparing them to standard annotation, but a deeper analysis of what kind of syntax the PLMs contain is missing -- there is only one sentence at the end of section 5.4 towards this, which however shows that the authors have probably already forgotten the stated goal of finding out what kind of syntax PLMs learn, plainly talking about "incorrect patterns", which would a need further explanation since a pattern can only be incorrect according to some theory of syntax, while the PLMs may have their own notion of syntax within which these patterns are correct. We would first need to try to understand the notion of syntax in the PLMs, and !
+ only then could we see whether some patterns are incorrect. I am not against the practical focus, aiming to produce as accurate trees as possible in an unsupervised way from PLM self-attentions, which is a good goal on its own; but then the paper should be written so all the way, not claiming to be an analysis paper.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
+
+Missing References
+---------------------------------------------------------------------------
+In my opinion, a crucial missing reference is the last year's BlackboxNLP paper "From balustrades to Pierre Vinken: Looking for syntax in transformer self-attentions" by Mareček and Rosa. Very similarly to the reviewed paper, the authors devise an unsupervised method of extracting syntactic scores from self-attention heads of a Transformer-based model, and utilize the CKY algorithm to build constituency syntax trees. The authors then compare the built trees to standard syntactic trees produced by the Stanford parser, observing F1 scores around 30% for English and around 40% for German and French. There are a number of differences, such as using a NMT model, not a PLM; using all attention heads without any selection of the syntactic ones, with additional experiments utilizing supervised data to select the syntactic heads; extracting the scores from the attentions in a different way; etc. Nevertheless, I find the base of the two papers so close that I strongly believe the aut!
+ hors should explicitly compare their method to this previous work, and probably also soften their claims about all previous work requiring some annotated development data.
+
+I also suggest the authors to study some work on parser confidence; I only know works on estimating the confidence of dependency parsers, so I do not know how useful the tree score of the CKY parser is in estimating the CKY parser confidence and also I do not know any particular work to recommend, but I feel this should be studied and discussed a bit before just using it more or less in that way. (In dependency parsing, it is very often so that the scores that the parser outputs are mostly or completely useless for estimating the parser confidence.)
+---------------------------------------------------------------------------
+
+
+Typos, Grammar, Style, and Presentation Improvements
+---------------------------------------------------------------------------
+The paper refers to several Kim et al papers very intensely, which I find suspicious and potentially weakening the double-blindness. Interestingly, these are two different Kims, but both of them are referred to very often -- there are two papers by Taeuk Kim et al which together are cited 10 times, and two papers by Yoon Kim et al which together are cited 12 times; so we can guess that one of the authors is probably Kim but it is harder to guess which Kim. Nevertheless, I encourage the authors to be more careful about this next time, if possible.
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+Core Review: What is this paper about, what contributions does it make, and what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+This paper is about unsupervised constituency parsing on the base of pre-trained models. The major contribution, as claimed by the authors is that the proposed ranking-based approach does not need a development set.
+
+Strengths:
+The paper proposes a new approach to unsupervised constituency parsing and conducts both parsing and analysis on induced grammars.
+
+Weaknesses:
+1. The paper writing, especially the method part is not easy to understand. For example, it is not clear how the selected attention heads are used to get a predicted parse in a chart parsing process. In addition, authors claim that the proposed approach can avoid the use of development sets, but the question is, how can we decide the best confection of f, s_{comp} to get a single predicted parse tree?
+2. Comparison with previous works is limited.Authors use a re-implementation of chart-based parsers instead previously reported results.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+The paper aims to tackle unsupervised parsing by ranking attention heads. To my knowledge, such a idea has not been studied before.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+As mentioned above, the paper  seems to have covered some details. Actually, I am not sure how to retrieve a predicted parse tree if no development set is used. In addition, the paper has no direct comparison with previous works. Authors, instead compare the proposed approach with baselines that are implemented by themselves.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 2.5
