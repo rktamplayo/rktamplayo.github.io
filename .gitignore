@@ -1,3 +1,9 @@
 
 assets/.DS_Store
 *.icloud
+.DS_Store
+assets/cv/cv.aux
+assets/cv/cv.bbl
+assets/cv/cv.blg
+assets/cv/cv.log
+assets/cv/cv.synctex.gz

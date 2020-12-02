@@ -1,0 +1,107 @@
+Reviewer #1
+Questions
+1. {Summary} Please summarize the main claims/contributions of the paper in your own words. (Do not provide any review in this box)
+In this paper, the authors use aspect and sentiment distributions as a content plan for unsupervised opinion summarization task. The content plan is used to generate synthetic datasets for training, as well as generate summarises from reviews. Experiment results on multiple datasets prove the effectiveness of the model.
+2. {Novelty} How novel is the paper?
+Paper contributes some new ideas
+3. {Soundness} Is the paper technically sound?
+I have not checked all details, but the paper appears to be technically sound
+4. {Impact} How important is the paper likely to be, considering both methodological contributions and impact on application areas?
+The paper will have low overall impact
+5. {Clarity} Is the paper well-organized and clearly written?
+Good: paper is well organized but language can be improved
+6. {Evaluation} Are claims well supported by experimental results?
+Excellent: Experimental results are comprehensive and strongly support the claims
+7. {Resources} How impactful will this work be via sharing datasets, code and/or other resources? (It may help to consult the paper’s reproducibility checklist.)
+Good: shared resources are likely to significantly impact future work
+8. (Reproducibility) Would the experiments in the paper be easy to reproduce? (It may help to consult the paper’s reproducibility checklist.)
+Excellent: e.g., code/data available and paper comprehensively describes experimental settings
+9. {Reasons to Accept} Please describe the paper’s key strengths.
+1. An interesting way to apply content plan method on new task
+2. Combine both sentiment and aspect in opinion summarization
+3. Sufficient experiments to prove the effectiveness of the model
+10. {Reasons to Reject} Please describe the paper’s key weaknesses.
+1. The choices of baseline models makes the experiments a little bit unconvincing.
+2. The novelty is limited.
+11. {Detailed Comments} Please provide other detailed comments and constructive feedback.
+If I understand correctly, the proposed method is more like a self-supervised manner instead of unsupervised. So simply comparing the Rouge scores with graph-based unsupervised methods seems unfair. The complexity and computing cost is totally different.
+Also I believe sentiment labels are not used in many baselines. It is hard to tell the improvements of the results is from additional data or the model.
+12. {QUESTIONS FOR THE AUTHORS} Please provide questions for authors to address during the author feedback period. (Please number them)
+Are all the baseline methods trained on the original datasets or on the sampled datasets using the constraints?
+14. (OVERALL SCORE)
+6 - Above threshold of acceptance
+19. I acknowledge that I have read the author's rebuttal and made whatever changes to my review where necessary.
+Agreement accepted
+Reviewer #2
+Questions
+1. {Summary} Please summarize the main claims/contributions of the paper in your own words. (Do not provide any review in this box)
+This paper incorporates content planning in an unsupervised summarization model to generate more informative, coherent and fluent summaries. To be more specific, this paper takes aspect and sentiment information into consideration and uses them to create synthetic datasets. Then, Summarization model is trained on these pseudo-labelled datasets.
+2. {Novelty} How novel is the paper?
+Paper contributes some new ideas
+3. {Soundness} Is the paper technically sound?
+I have not checked all details, but the paper appears to be technically sound
+4. {Impact} How important is the paper likely to be, considering both methodological contributions and impact on application areas?
+The paper will impact a moderate number of researchers
+5. {Clarity} Is the paper well-organized and clearly written?
+Good: paper is well organized but language can be improved
+6. {Evaluation} Are claims well supported by experimental results?
+Good: Experimental results are sufficient, though more analysis would significantly add support to the claims
+7. {Resources} How impactful will this work be via sharing datasets, code and/or other resources? (It may help to consult the paper’s reproducibility checklist.)
+Fair: some may find shared resources useful in future work
+8. (Reproducibility) Would the experiments in the paper be easy to reproduce? (It may help to consult the paper’s reproducibility checklist.)
+Good: e.g., code/data available, but some details of experimental settings are missing/unclear
+9. {Reasons to Accept} Please describe the paper’s key strengths.
+1. Content planning is introduced into the summarization task and achieves good results
+2. Good writing and sufficient experiments
+10. {Reasons to Reject} Please describe the paper’s key weaknesses.
+1. Lack of some analysis of the quality of the synthetic datasets
+11. {Detailed Comments} Please provide other detailed comments and constructive feedback.
+I personally think content planning is an interesting research direction in the text summarization task. The reference summaries of many existing datasets are not very coherent (for example, CNN/DailyMail, whose reference summaries are composed of some highlights in the web page), and ROUGE score is not affected by the order of sentences, so the research of consistency in the summarization task is relatively lacking. This paper makes a good attempt by using the content planning in the opinion summarization task.
+
+My concern is the quality of your synthetic datasets. It can be seen from Table 3 that even if a synthetic dataset is completely randomly sampled, it will not have a very significant impact on the final performance (R-L is only decreased by 0.3-0.5). Is there any restriction on random sampling here? If there are no restrictions, most reviews may not describe the same entity, but it can get similar performance, which may indicate that your model does not really generate a summary of a specific entity. I think some analysis on the quality of the synthetic datasets should be added to make your results more convincing.
+
+In addition, I notice that RT dataset has reference summaries in the training set. I understand that this paper focuses on unsupervised methods, but perhaps the results of training your summarization model on the real dataset can show us the performance gap between the supervised and unsupervised methods, and we can more clearly understand the effectiveness of your content planning method to create synthetic data.
+12. {QUESTIONS FOR THE AUTHORS} Please provide questions for authors to address during the author feedback period. (Please number them)
+1. I don't know if I missed some details in the paper, but I am not very clear about how to define the "aspect" in different datasets. Is aspect a completely implicit concept in this paper (that is, just use loss to make different reviews focus on different aspects of an entity)? How many aspects are there for each dataset in your experiment?
+14. (OVERALL SCORE)
+7 - Accept
+19. I acknowledge that I have read the author's rebuttal and made whatever changes to my review where necessary.
+Agreement accepted
+Reviewer #3
+Questions
+1. {Summary} Please summarize the main claims/contributions of the paper in your own words. (Do not provide any review in this box)
+This paper proposes an effect pseudo opinion summarization corpus constructing approach via considering content planning with aspect and sentiment distributions. At the same time, these two distributions can also be used in the designed summary model. Automatic and human-based evaluation showed that their model outperforms competitive systems on three benchmarks with varying characteristics.
+2. {Novelty} How novel is the paper?
+Main ideas of the paper are creative and distinctive
+3. {Soundness} Is the paper technically sound?
+I have not checked all details, but the paper appears to be technically sound
+4. {Impact} How important is the paper likely to be, considering both methodological contributions and impact on application areas?
+The paper will impact a moderate number of researchers
+5. {Clarity} Is the paper well-organized and clearly written?
+Good: paper is well organized but language can be improved
+6. {Evaluation} Are claims well supported by experimental results?
+Good: Experimental results are sufficient, though more analysis would significantly add support to the claims
+7. {Resources} How impactful will this work be via sharing datasets, code and/or other resources? (It may help to consult the paper’s reproducibility checklist.)
+Good: shared resources are likely to significantly impact future work
+8. (Reproducibility) Would the experiments in the paper be easy to reproduce? (It may help to consult the paper’s reproducibility checklist.)
+Good: e.g., code/data available, but some details of experimental settings are missing/unclear
+9. {Reasons to Accept} Please describe the paper’s key strengths.
+This paper proposes an effect pseudo opinion summarization corpus constructing approach via considering content planning with aspect and sentiment distributions. At the same time, these two distributions can also be used in the designed summary model. Automatic and human-based evaluation showed that their model outperforms competitive systems on three benchmarks with varying characteristics.
+10. {Reasons to Reject} Please describe the paper’s key weaknesses.
+(1) An effective unsupervised text generation framework for text generation.
+(2) This paper is overall clearly written and technically feasible. I like the demonstration in Figures 2 and 3 that clearly depict the overall process of the main ideas.
+(3) The proposed outperforms competitive systems in terms of ROUGE, achieving state of the art on different datasets.
+11. {Detailed Comments} Please provide other detailed comments and constructive feedback.
+1. I think the major issue is that the method proposed in the paper cannot be called content planning, but should be content selection. Content planning refers to the orderly rehearsal of entities, keywords and tuples, and this paper does not involve related content.
+2. The paper did not visually analyze the aspect and sentiment distributions (including appendices), and it is difficult to directly verify the actual role played by the summary results.
+3. Although the paper achieved the SOTA, the specific reason is that the pseudo-corpus or the proposed model does not give a clear boundary. It is difficult to know at what level the model proposed by the author is if the same training set is used.
+12. {QUESTIONS FOR THE AUTHORS} Please provide questions for authors to address during the author feedback period. (Please number them)
+1. Under the same corpus (standard or constructed pseudo corpus), the model performance comparison
+13. {Ethical Considerations} Please highlight any ethical considerations that must be considered before a final decision (it may help to consult the paper’s ethics statement, if provided)
+1. Comparative statistics between the scale of the constructed pseudo-corpus and the standard corpus.
+2. Why not use some more popular methods, such as transformers and pre-trained models
+3. And please answer the above weaknesses.
+14. (OVERALL SCORE)
+6 - Above threshold of acceptance
+19. I acknowledge that I have read the author's rebuttal and made whatever changes to my review where necessary.
+Agreement accepted

@@ -7,6 +7,11 @@
 \newblock In {\em Empirical Methods in Natural Language Processing and
   International Joint Conference on Natural Language Processing}, 2019.
 
+\bibitem{amplayo2021unsupervised}
+\FormatName{RK Amplayo}, \FormatName{S Angelidis}, and \FormatName{M Lapata}.
+\newblock Unsupervised opinion summarization with content planning.
+\newblock In {\em AAAI Conference on Artificial Intelligence}, 2021.
+
 \bibitem{amplayo2018network}
 \FormatName{RK Amplayo}, \FormatName{S Hong}, and \FormatName{M Song}.
 \newblock Network-based approach to detect novelty of scholarly literature.
@@ -85,6 +90,13 @@
   multiple short online reviews.
 \newblock {\em Data \& Knowledge Engineering}, 110:54--67, 2017.
 
+\bibitem{angelidis2020extractive}
+\FormatName{S Angelidis}, \FormatName{RK Amplayo}, \FormatName{Y Suhara},
+  \FormatName{X Wang}, and \FormatName{M Lapata}.
+\newblock Extractive opinion summarization in quantized transformer spaces.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  2020.
+
 \bibitem{cho2018adversarial}
 \FormatName{M Cho}, \FormatName{RK Amplayo}, \FormatName{Sw Hwang}, and
   \FormatName{J Park}.
@@ -99,6 +111,19 @@
   classification.
 \newblock {\em Transactions of the Association for Computational Linguistics},
   7:201--215, 2019.
+
+\bibitem{kim2020retrieval}
+\FormatName{J Kim}, \FormatName{S Choi}, \FormatName{RK Amplayo}, and
+  \FormatName{Sw Hwang}.
+\newblock Retrieval-augmented and controllable review generation.
+\newblock In {\em International Conference on Computational Linguistics}, 2020.
+
+\bibitem{li2020heads}
+\FormatName{B Li}, \FormatName{T Kim}, \FormatName{RK Amplayo}, and
+  \FormatName{F Keller}.
+\newblock Heads-up! unsupervised constituency parsing via self-attention heads.
+\newblock In {\em Asia-Pacific Chapter of the Association for Computational
+  Linguistics}, 2020.
 
 \bibitem{park2019thisiscompetition}
 \FormatName{C Park}, \FormatName{J Kim}, \FormatName{Hg Lee}, \FormatName{RK
