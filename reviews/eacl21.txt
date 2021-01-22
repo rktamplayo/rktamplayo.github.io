@@ -1,0 +1,107 @@
+============================================================================ 
+EACL 2021 Reviews for Submission #1024
+============================================================================ 
+
+Title: Maximally Informative and Controllable Opinion Summarization
+Authors: Reinald Kim Amplayo and Mirella Lapata
+============================================================================
+                            META-REVIEW
+============================================================================ 
+
+Comments: This paper proposes an alternative to extract-then-abstract methods of opinion summarization by first condensing *all* opinions, then applying an abstractive systems. The approach is interesting and novel and the results are convincing. I agree with Reviewer 1 that calling this approach "maximally informative" is misleading or outright incorrect, and would suggest renaming it to something more neutral such as "condense-then-abstract".
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+What is this paper about, what contributions does it make, what are the strengths and weaknesses, what are the questions for the authors?
+---------------------------------------------------------------------------
+The paper proposes a method for opinion summarization - an alternative to extract-abstract framework. The Extract-Abstract framework is useful to handle large sized inputs, but comes at a cost of loss of information. The proposed framework addresses by condensing the input into a sequence of encodings and aggregating them with a weighted average. The average encoding is used by a decoder to generate the summarize. The authors have further used the notions of attention to tune the summarization specific target aspects. The method is tested via automatic metrics and human annotations.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+Neat end-to-end framework
+Aspect tailoring approach allows scalability
+Evaluations show promise
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+The "maximally informative" part of the title is questionable
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 4
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+What is this paper about, what contributions does it make, what are the strengths and weaknesses, what are the questions for the authors?
+---------------------------------------------------------------------------
+This work proposes a two-step summarization framework to tackle the opinion summarization task. In the condense model, they adopt an auto-encoder to generate the encodings of each reviews. Then an abstract model is used to generate the final summaries based on the encodings produced in the previous step. In addition, the authors introduce a zero-shot customization methods to enable the controllable generation at test time. Their methods outperforms several baselines on Rotten Tomatoes dataset with both automatic and human evaluations.
+
+The idea of the paper is interesting. Instead of the using extract-abstract framework, they adopt AE to first produce encodings of all input reviews, and then generate the final summaries based on the encodings. To enhance the saliency, they also propose a salience-based extracts. The results including both automatic and human evaluation, showing the improvement of their methods. 
+
+Since the reviews are encoded independently, it is possible to bring the redundant information and hurt the conciseness of the final summaries. I wonder if the authors have some analysis on this?
+Also, only Rotten Tomatoes dataset is used in the experiment. Have you considered to include some other datasets?
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+- The idea is interesting, and the results seem good;
+- Both automatic and human evaluation is provided, and the significant test is included in human evaluation.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+- Encoding the reviews independently may bring redundancy;
+- Only one dataset is used in the experiment.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+What is this paper about, what contributions does it make, what are the strengths and weaknesses, what are the questions for the authors?
+---------------------------------------------------------------------------
+This paper considers a specific setting of summarization with multiple reviews. The framework requires more informative summaries and allows to take user preferences into account using our zero-shot customization setting. 
+
+This problem is like to summarize multiple reviews on specific types, e.g., acting and plot.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+1. The paper is generally well written, and it is relatively easy to follow.
+2. The experiment results are sufficient and convincing. Human evaluation is included and the performance is better than the baseline
+3. Detailed ablation and generated example is provided.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+1. It looks like the conditional summarization generation has some collapse issue as shown in the examples.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
