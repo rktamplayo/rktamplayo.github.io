@@ -1,0 +1,142 @@
+============================================================================ 
+EMNLP 2021 Reviews for Submission #1076
+============================================================================ 
+
+Title: Aspect-Controllable Opinion Summarization
+Authors: Reinald Kim Amplayo, Stefanos Angelidis and Mirella Lapata
+============================================================================
+                            META-REVIEW
+============================================================================ 
+
+Comments: This paper presents an MIL-based model for multi-level aspect estimation and leverages the estimation for aspect-controllable summarization. The model is effective and it could provide some explanation for its final summary.
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+What is this paper about, what contributions does it make, and what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+This paper proposes a new method, AceSum, to generate abstractive opinion summaries based on aspect queries. In terms of the model design, there are two main contributions. The first is MIL based document aspect estimator. The second is to add aspect controller in sequence to sequence opinion summary generation. The main strength of the paper is that AceSum can generate opinion summaries based on multiple aspect queries even though the aspects are pre-defined and have to come with seed words.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+AceSum can generate opinion summaries based on multiple aspect queries which has not been addressed in previous works. The scores of the model is much better than other models combined with a certain heuristics. (Table 4)
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+Some of the model details are hard to read. For example, what are * in eq3 and . in eq4?  Another example is line 455. It is not clear how they are ranked making the experiment result hard to reproduce. Overall presentation of the content could be improved.
+---------------------------------------------------------------------------
+
+
+Questions for the Author(s)
+---------------------------------------------------------------------------
+* In Sec 3.3, what is the input to the sequence-to-sequence model. According to Eq 8, 9, 10, it seems that z is the only input. Where is X?
+
+* In Table 5, AceSum and T5-similar is compared. What are the main difference between them?
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Reproducibility: 3
+                        Ethical Concerns: No
+     Overall Recommendation - Long Paper: 3.5
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+What is this paper about, what contributions does it make, and what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+This paper proposes an approach for generating aspect-oriented summaries, such as location and room of a hotel, with aspect queries. This method creates a synthetic training dataset of (review, summary) pairs enriched with aspect controllers trained from silver training data created from keyword matching. The synthetic data is used for fine-tuning a pretrained model. The fine-tuned model generates aspect-specific summaries by modifying the aspect controllers. This paper also developed an extended OPOSAM by adding aspect-specific opinion summaries to the original OPOSUM data set for the evaluation. Experiments on SPACE and extended OPOSUM show that the method outperforms the previous state of the art methods.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+The paper proposed a new abstractive summarization method for generating aspect-specific opinion summaries. The proposed method consists of a training method of aspect controllers from automatically generated sliver training data and a synthetic dataset creation method for aspect-specific text summarization.
+
+The new data set, an extended OPOSAM including aspect-oriented summaries, contributes to future aspect-specific text summarization research.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+There are unclear points listed in the questions for the authors.
+---------------------------------------------------------------------------
+
+
+Questions for the Author(s)
+---------------------------------------------------------------------------
+*There are two types of seed words, automatically extracted seed words and human seed words. When training aspect controllers, which seed words are used?
+* The Eq (3) is unclear. All the {\bf z}_h seem be the same value.
+
+*How does the paper sample pseudo-summaries? How many pseudo-summaries are selected for each? In addition, how many sentences are fed into the encoder when training a model from 
+the synthetic dataset?
+
+* When generating an aspect-specific summary, did the summarization model use sentences and keywords that have the same target aspect or all the sentences? In addition, how many sentences are fed into the encoder?
+---------------------------------------------------------------------------
+
+
+Typos, Grammar, Style, and Presentation Improvements
+---------------------------------------------------------------------------
+The reviewer thinks the creation of an extended OPOSUM is a good contribution for the NLP community. In order to clarify the difference between OPOSUM and the extended OPOSUM created by this paper, a different naming and the mention of it in the abstract, the introduction and the conclusion would be helpful for readers.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Reproducibility: 4
+                        Ethical Concerns: No
+     Overall Recommendation - Long Paper: 3.5
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+What is this paper about, what contributions does it make, and what are the main strengths and weaknesses?
+---------------------------------------------------------------------------
+The paper presents an approach for generating aspect-specific summaries with aspect controllers. The controller induction model is a multiple instance learning model which learns varying levels of granularity and is used to create synthetic data for training an aspect-specific summarization model. Experiments on two benchmarks show improvements with the proposed method for both general and aspect-specific summarization. Human evaluation also supports the gains from this method. 
+
+Strengths:
+The approach is straightforward and effective, as seen in both automatic and human evaluations. Experiments and analysis are extensive, and the paper is well written. 
+
+Weaknesses:
+I do not see major weaknesses.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+The paper moves the bar forward in opinion summarization on reviews and also offers insights more broadly for aspect-base summarization.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+I do not see any major risks.
+---------------------------------------------------------------------------
+
+
+Questions for the Author(s)
+---------------------------------------------------------------------------
+Was the motivation behind the extension of Oposum to aspect-specific summarization, as opposed to extending the Amazon or Yelp datasets, motivated primarily by the existence of extractive summaries to test your extractive method? Do you plan to extend these methods to those datasets as well? 
+
+Do you have any insight on the presence of factual inconsistencies in the model's aspect-based summaries? When you rank the input sentences and then condition upon them along with an aspect/keywords, I can imagine that the model will sometimes hallucinate information about an aspect just because it is conditioned on that aspect. Did you consider using a threshold for the cosine similarity mentioned in L458 in addition to truncating the input mentioned in L383?
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                         Reproducibility: 4
+                        Ethical Concerns: No
+     Overall Recommendation - Long Paper: 4
