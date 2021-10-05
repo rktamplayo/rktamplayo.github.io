@@ -7,6 +7,11 @@
 \newblock In {\em Empirical Methods in Natural Language Processing and
   International Joint Conference on Natural Language Processing}, 2019.
 
+\bibitem{amplayo2021aspect}
+\FormatName{RK Amplayo}, \FormatName{S Angelidis}, and \FormatName{M Lapata}.
+\newblock Aspect-controllable opinion summarization.
+\newblock In {\em Empirical Methods in Natural Language Processing}, 2021.
+
 \bibitem{amplayo2021unsupervised}
 \FormatName{RK Amplayo}, \FormatName{S Angelidis}, and \FormatName{M Lapata}.
 \newblock Unsupervised opinion summarization with content planning.
@@ -40,11 +45,6 @@
   classification.
 \newblock In {\em Annual Meeting of the Association for Computational
   Linguistics}, 2018.
-
-\bibitem{amplayo2019informative}
-\FormatName{RK Amplayo} and \FormatName{M Lapata}.
-\newblock Informative and controllable opinion summarization.
-\newblock {\em arXiv preprint arXiv:1909.02322}, 2019.
 
 \bibitem{amplayo2020unsupervised}
 \FormatName{RK Amplayo} and \FormatName{M Lapata}.
@@ -95,6 +95,11 @@
 \newblock An adaptable fine-grained sentiment analysis for summarization of
   multiple short online reviews.
 \newblock {\em Data \& Knowledge Engineering}, 110:54--67, 2017.
+
+\bibitem{amplayo2021efficient}
+\FormatName{RK Amplayo}, \FormatName{KM Yoo}, and \FormatName{SW Lee}.
+\newblock Efficient attribute injection for pretrained language models.
+\newblock {\em arXiv preprint arXiv:2109.07953}, 2021.
 
 \bibitem{angelidis2020extractive}
 \FormatName{S Angelidis}, \FormatName{RK Amplayo}, \FormatName{Y Suhara},
