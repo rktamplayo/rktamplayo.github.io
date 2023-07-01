@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.9)  1 JUL 2023 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.9)  1 JUL 2023 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,7 +639,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 Underfull \hbox (badness 10000) in paragraph at lines 74--74
-[]\T1/lmvtt/m/n/10 (+20) reinald.kim@ed.ac.uk
+[]\T1/lmvtt/m/n/10 (+20) kinsaka21@gmail.com
  []
 
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
@@ -724,7 +724,7 @@ fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmvtt10.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8
 t.pfb>
-Output written on cv.pdf (4 pages, 77843 bytes).
+Output written on cv.pdf (4 pages, 77875 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
