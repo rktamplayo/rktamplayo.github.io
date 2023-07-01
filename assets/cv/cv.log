@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.9)  5 OCT 2021 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.9)  18 DEC 2022 04:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -706,28 +706,122 @@ This may cause the page layout to be inconsistent, however.
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
 (Font)              scaled to size 10.51207pt on input line 149.
 
-(./cv.bbl) [2] [3] [4] (./cv.aux) ) 
+No file cv.bbl.
+
+LaTeX Warning: Citation `amplayo2022attribute' undefined on input line 155.
+
+
+LaTeX Warning: Citation `kim2022modularized' undefined on input line 156.
+
+
+LaTeX Warning: Citation `amplayo2022beyond' undefined on input line 157.
+
+
+LaTeX Warning: Citation `amplayo2021aspect' undefined on input line 158.
+
+
+LaTeX Warning: Citation `amplayo2021informative' undefined on input line 159.
+
+
+LaTeX Warning: Citation `amplayo2021unsupervised' undefined on input line 160.
+
+
+LaTeX Warning: Citation `angelidis2020extractive' undefined on input line 161.
+
+
+LaTeX Warning: Citation `kim2020retrieval' undefined on input line 162.
+
+
+LaTeX Warning: Citation `li2020heads' undefined on input line 163.
+
+
+LaTeX Warning: Citation `amplayo2020unsupervised' undefined on input line 164.
+
+
+LaTeX Warning: Citation `amplayo2019text' undefined on input line 165.
+
+
+LaTeX Warning: Citation `amplayo2019rethinking' undefined on input line 166.
+
+
+LaTeX Warning: Citation `kim2019categorical' undefined on input line 167.
+
+
+LaTeX Warning: Citation `amplayo2019autosense' undefined on input line 168.
+
+
+LaTeX Warning: Citation `cho2018adversarial' undefined on input line 169.
+
+
+LaTeX Warning: Citation `amplayo2018cold' undefined on input line 170.
+
+
+LaTeX Warning: Citation `amplayo2018translations' undefined on input line 171.
+
+
+LaTeX Warning: Citation `amplayo2018entity' undefined on input line 172.
+
+
+LaTeX Warning: Citation `yeo2018visual' undefined on input line 173.
+
+
+LaTeX Warning: Citation `amplayo2018incorporating' undefined on input line 174.
+
+
+
+LaTeX Warning: Citation `amplayo2018network' undefined on input line 175.
+
+[2]
+
+LaTeX Warning: Citation `amplayo2017aspect' undefined on input line 176.
+
+
+LaTeX Warning: Citation `amplayo2017adaptable' undefined on input line 177.
+
+
+LaTeX Warning: Citation `amplayo2022query' undefined on input line 182.
+
+
+LaTeX Warning: Citation `amplayo2022smart' undefined on input line 183.
+
+
+LaTeX Warning: Citation `narayan2022conditional' undefined on input line 184.
+
+
+LaTeX Warning: Citation `amplayo2019evaluating' undefined on input line 185.
+
+
+LaTeX Warning: Citation `park2019thisiscompetition' undefined on input line 186
+.
+
+
+LaTeX Warning: Citation `amplayo2016building' undefined on input line 187.
+
+[3] (./cv.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8225 strings out of 480608
- 120331 string characters out of 5903631
- 405947 words of memory out of 5000000
- 23732 multiletter control sequences out of 15000+600000
- 595618 words of font info for 239 fonts, out of 8000000 for 9000
+ 8107 strings out of 480608
+ 118887 string characters out of 5903631
+ 404836 words of memory out of 5000000
+ 23712 multiletter control sequences out of 15000+600000
+ 589437 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,11n,59p,811b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/en
-c/dvips/lm/lm-ec.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/ly1/te
-xnansi.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/bitstrea/charter/bch
-b8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/bitstrea/charter/bchr8a
-.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.p
-fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmvtt10.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8
-t.pfb>
-Output written on cv.pdf (4 pages, 78706 bytes).
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2020/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/local/texlive/20
+20/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/public/lm/lmvtt10.pfb></usr/local/texlive/2020/texmf-dist/fon
+ts/type1/public/mathdesign/mdbch/md-chr7y.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb>
+Output written on cv.pdf (3 pages, 68260 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  67585 words of extra memory for PDF output out of 74296 (max. 10000000)
 
